@@ -9,6 +9,14 @@
         <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="3.375" PointY="3.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Administrador" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="7.875" PointY="2.625" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Horario" Width="1.5" PointX="3.375" PointY="7.875" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="5.375" PointY="5.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="5.625" PointY="2.5" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Cliente" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_DetalleReserva_Reserva" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Horario" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Sala" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
