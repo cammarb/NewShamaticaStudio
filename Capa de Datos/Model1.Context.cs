@@ -29,5 +29,9 @@ namespace CapaDatos
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Administrador> Administradores { get; set; }
+        public virtual DbSet<DetalleReserva> DetalleReservas { get; set; }
+        public virtual DbSet<Horario> Horario { get; set; }
+        public virtual DbSet<Instrumento> Instrumentos { get; set; }
+        public virtual DbSet<Reserva> Reservas { get; set; }
     }
 }
