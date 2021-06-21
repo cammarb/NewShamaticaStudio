@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaReservas;
+using System.Drawing.Drawing2D;
 
 namespace CapaPresentacion
 {
