@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShamaticaStudioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="dni_admin" />
+          </Key>
+          <Property Name="dni_admin" Type="int" Nullable="false" />
+          <Property Name="nom_admin" Type="varchar" MaxLength="50" />
+          <Property Name="correo_admin" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="cli_dni" />
+          </Key>
+          <Property Name="cli_dni" Type="int" Nullable="false" />
+          <Property Name="cli_nombre" Type="varchar" MaxLength="50" />
+          <Property Name="cli_edad" Type="int" />
+          <Property Name="cli_sexo" Type="varchar" MaxLength="10" />
+          <Property Name="cli_universidad" Type="varchar" MaxLength="50" />
+          <Property Name="cli_distrito" Type="varchar" MaxLength="50" />
+          <Property Name="cli_correo" Type="varchar" MaxLength="50" />
+          <Property Name="cod_sala" Type="int" />
+          <Property Name="cli_banda" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="cod_sala" />
+          </Key>
+          <Property Name="cod_sala" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="num_sala" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rol" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ShamaticaStudioModelStoreContainer">
+          <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShamaticaStudioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="cod_sala" />
+          </Key>
+          <Property Name="cod_sala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="num_sala" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ShamaticaStudioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Salas" EntityType="Self.Sala" />
+          <EntitySet Name="Usuarios" EntityType="ShamaticaStudioModel.Usuario" />
+          <EntitySet Name="Clientes" EntityType="ShamaticaStudioModel.Cliente" />
+          <EntitySet Name="Administradores" EntityType="ShamaticaStudioModel.Administrador" />
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="cli_dni" />
+          </Key>
+          <Property Name="cli_dni" Type="Int32" Nullable="false" />
+          <Property Name="cli_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_edad" Type="Int32" />
+          <Property Name="cli_sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli_universidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cod_sala" Type="Int32" />
+          <Property Name="cli_banda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Administrador">
+          <Key>
+            <PropertyRef Name="dni_admin" />
+          </Key>
+          <Property Name="dni_admin" Type="Int32" Nullable="false" />
+          <Property Name="nom_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShamaticaStudioModelStoreContainer" CdmEntityContainer="ShamaticaStudioEntities">
+          <EntitySetMapping Name="Salas">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Sala">
+              <MappingFragment StoreEntitySet="Sala">
+                <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
+                <ScalarProperty Name="num_sala" ColumnName="num_sala" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="cli_banda" ColumnName="cli_banda" />
+                <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
+                <ScalarProperty Name="cli_correo" ColumnName="cli_correo" />
+                <ScalarProperty Name="cli_distrito" ColumnName="cli_distrito" />
+                <ScalarProperty Name="cli_universidad" ColumnName="cli_universidad" />
+                <ScalarProperty Name="cli_sexo" ColumnName="cli_sexo" />
+                <ScalarProperty Name="cli_edad" ColumnName="cli_edad" />
+                <ScalarProperty Name="cli_nombre" ColumnName="cli_nombre" />
+                <ScalarProperty Name="cli_dni" ColumnName="cli_dni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administradores">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Administrador">
+              <MappingFragment StoreEntitySet="Administrador">
+                <ScalarProperty Name="correo_admin" ColumnName="correo_admin" />
+                <ScalarProperty Name="nom_admin" ColumnName="nom_admin" />
+                <ScalarProperty Name="dni_admin" ColumnName="dni_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
