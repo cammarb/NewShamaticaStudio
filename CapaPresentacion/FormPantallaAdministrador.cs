@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace CapaPresentacion
 {
@@ -15,6 +16,17 @@ namespace CapaPresentacion
         public FormPantallaAdministrador()
         {
             InitializeComponent();
+        }
+
+        private void FormPantallaAdministrador_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics mgraphics = e.Graphics;
+            Pen pen = new Pen(Color.FromArgb(168, 255, 120), 1);
+
+            Rectangle area = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
+            LinearGradientBrush lgb = new LinearGradientBrush(area, Color.FromArgb(168, 255, 120), Color.FromArgb(120, 255, 214), LinearGradientMode.Vertical);
+            mgraphics.FillRectangle(lgb, area);
+            mgraphics.DrawRectangle(pen, area);
         }
     }
 }
