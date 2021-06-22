@@ -27,6 +27,40 @@
           <Property Name="cod_sala" Type="int" />
           <Property Name="cli_banda" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="DetalleReserva">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="int" Nullable="false" />
+          <Property Name="id_reserva" Type="int" />
+          <Property Name="cli_nombre" Type="varchar" MaxLength="50" />
+          <Property Name="hora_reserva" Type="datetime" />
+          <Property Name="num_sala" Type="int" />
+        </EntityType>
+        <EntityType Name="Horario">
+          <Key>
+            <PropertyRef Name="id_horario" />
+          </Key>
+          <Property Name="id_horario" Type="int" Nullable="false" />
+          <Property Name="hora_reserva" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Instrumento">
+          <Key>
+            <PropertyRef Name="id_instrumento" />
+          </Key>
+          <Property Name="id_instrumento" Type="int" Nullable="false" />
+          <Property Name="nombre_instrumento" Type="varchar" MaxLength="50" />
+          <Property Name="costo_instrumento" Type="int" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="id_reserva" />
+          </Key>
+          <Property Name="id_reserva" Type="int" Nullable="false" />
+          <Property Name="cli_dni" Type="int" />
+          <Property Name="id_horario" Type="int" />
+          <Property Name="cod_sala" Type="int" />
+        </EntityType>
         <EntityType Name="Sala">
           <Key>
             <PropertyRef Name="cod_sala" />
@@ -43,11 +77,79 @@
           <Property Name="status" Type="bit" />
           <Property Name="rol" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK_DetalleReserva_Reserva">
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="0..1" />
+          <End Role="DetalleReserva" Type="Self.DetalleReserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reserva">
+              <PropertyRef Name="id_reserva" />
+            </Principal>
+            <Dependent Role="DetalleReserva">
+              <PropertyRef Name="id_reserva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="cli_dni" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="cli_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Horario">
+          <End Role="Horario" Type="Self.Horario" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horario">
+              <PropertyRef Name="id_horario" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="id_horario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="cod_sala" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="cod_sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ShamaticaStudioModelStoreContainer">
           <EntitySet Name="Administrador" EntityType="Self.Administrador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleReserva" EntityType="Self.DetalleReserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instrumento" EntityType="Self.Instrumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sala" EntityType="Self.Sala" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DetalleReserva_Reserva" Association="Self.FK_DetalleReserva_Reserva">
+            <End Role="Reserva" EntitySet="Reserva" />
+            <End Role="DetalleReserva" EntitySet="DetalleReserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Cliente" Association="Self.FK_Reserva_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Horario" Association="Self.FK_Reserva_Horario">
+            <End Role="Horario" EntitySet="Horario" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Sala" Association="Self.FK_Reserva_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -59,12 +161,33 @@
           </Key>
           <Property Name="cod_sala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="num_sala" Type="Int32" />
+          <NavigationProperty Name="Reserva" Relationship="ShamaticaStudioModel.FK_Reserva_Sala" FromRole="Sala" ToRole="Reserva" />
         </EntityType>
         <EntityContainer Name="ShamaticaStudioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Salas" EntityType="Self.Sala" />
           <EntitySet Name="Usuarios" EntityType="ShamaticaStudioModel.Usuario" />
           <EntitySet Name="Clientes" EntityType="ShamaticaStudioModel.Cliente" />
           <EntitySet Name="Administradores" EntityType="ShamaticaStudioModel.Administrador" />
+          <EntitySet Name="DetalleReservas" EntityType="ShamaticaStudioModel.DetalleReserva" />
+          <EntitySet Name="Horario" EntityType="ShamaticaStudioModel.Horario" />
+          <EntitySet Name="Instrumentos" EntityType="ShamaticaStudioModel.Instrumento" />
+          <EntitySet Name="Reservas" EntityType="ShamaticaStudioModel.Reserva" />
+          <AssociationSet Name="FK_Reserva_Cliente" Association="ShamaticaStudioModel.FK_Reserva_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Reserva" EntitySet="Reservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleReserva_Reserva" Association="ShamaticaStudioModel.FK_DetalleReserva_Reserva">
+            <End Role="Reserva" EntitySet="Reservas" />
+            <End Role="DetalleReserva" EntitySet="DetalleReservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Horario" Association="ShamaticaStudioModel.FK_Reserva_Horario">
+            <End Role="Horario" EntitySet="Horario" />
+            <End Role="Reserva" EntitySet="Reservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Sala" Association="ShamaticaStudioModel.FK_Reserva_Sala">
+            <End Role="Sala" EntitySet="Salas" />
+            <End Role="Reserva" EntitySet="Reservas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -88,6 +211,7 @@
           <Property Name="cli_correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cod_sala" Type="Int32" />
           <Property Name="cli_banda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reserva" Relationship="ShamaticaStudioModel.FK_Reserva_Cliente" FromRole="Cliente" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="Administrador">
           <Key>
@@ -97,6 +221,94 @@
           <Property Name="nom_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="correo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="DetalleReserva">
+          <Key>
+            <PropertyRef Name="id_detalle" />
+          </Key>
+          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="id_reserva" Type="Int32" />
+          <Property Name="cli_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hora_reserva" Type="DateTime" Precision="3" />
+          <Property Name="num_sala" Type="Int32" />
+          <NavigationProperty Name="Reserva" Relationship="ShamaticaStudioModel.FK_DetalleReserva_Reserva" FromRole="DetalleReserva" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Horario">
+          <Key>
+            <PropertyRef Name="id_horario" />
+          </Key>
+          <Property Name="id_horario" Type="Int32" Nullable="false" />
+          <Property Name="hora_reserva" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Reserva" Relationship="ShamaticaStudioModel.FK_Reserva_Horario" FromRole="Horario" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Instrumento">
+          <Key>
+            <PropertyRef Name="id_instrumento" />
+          </Key>
+          <Property Name="id_instrumento" Type="Int32" Nullable="false" />
+          <Property Name="nombre_instrumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="costo_instrumento" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="id_reserva" />
+          </Key>
+          <Property Name="id_reserva" Type="Int32" Nullable="false" />
+          <Property Name="cli_dni" Type="Int32" />
+          <Property Name="id_horario" Type="Int32" />
+          <Property Name="cod_sala" Type="Int32" />
+          <NavigationProperty Name="Cliente" Relationship="ShamaticaStudioModel.FK_Reserva_Cliente" FromRole="Reserva" ToRole="Cliente" />
+          <NavigationProperty Name="DetalleReserva" Relationship="ShamaticaStudioModel.FK_DetalleReserva_Reserva" FromRole="Reserva" ToRole="DetalleReserva" />
+          <NavigationProperty Name="Horario" Relationship="ShamaticaStudioModel.FK_Reserva_Horario" FromRole="Reserva" ToRole="Horario" />
+          <NavigationProperty Name="Sala" Relationship="ShamaticaStudioModel.FK_Reserva_Sala" FromRole="Reserva" ToRole="Sala" />
+        </EntityType>
+        <Association Name="FK_Reserva_Cliente">
+          <End Type="ShamaticaStudioModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="ShamaticaStudioModel.Reserva" Role="Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="cli_dni" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="cli_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleReserva_Reserva">
+          <End Type="ShamaticaStudioModel.Reserva" Role="Reserva" Multiplicity="0..1" />
+          <End Type="ShamaticaStudioModel.DetalleReserva" Role="DetalleReserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reserva">
+              <PropertyRef Name="id_reserva" />
+            </Principal>
+            <Dependent Role="DetalleReserva">
+              <PropertyRef Name="id_reserva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Horario">
+          <End Type="ShamaticaStudioModel.Horario" Role="Horario" Multiplicity="0..1" />
+          <End Type="ShamaticaStudioModel.Reserva" Role="Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horario">
+              <PropertyRef Name="id_horario" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="id_horario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Sala">
+          <End Type="ShamaticaStudioModel.Sala" Role="Sala" Multiplicity="0..1" />
+          <End Type="ShamaticaStudioModel.Reserva" Role="Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="cod_sala" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="cod_sala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -142,6 +354,44 @@
                 <ScalarProperty Name="correo_admin" ColumnName="correo_admin" />
                 <ScalarProperty Name="nom_admin" ColumnName="nom_admin" />
                 <ScalarProperty Name="dni_admin" ColumnName="dni_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleReservas">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.DetalleReserva">
+              <MappingFragment StoreEntitySet="DetalleReserva">
+                <ScalarProperty Name="num_sala" ColumnName="num_sala" />
+                <ScalarProperty Name="hora_reserva" ColumnName="hora_reserva" />
+                <ScalarProperty Name="cli_nombre" ColumnName="cli_nombre" />
+                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
+                <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horario">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Horario">
+              <MappingFragment StoreEntitySet="Horario">
+                <ScalarProperty Name="hora_reserva" ColumnName="hora_reserva" />
+                <ScalarProperty Name="id_horario" ColumnName="id_horario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instrumentos">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Instrumento">
+              <MappingFragment StoreEntitySet="Instrumento">
+                <ScalarProperty Name="costo_instrumento" ColumnName="costo_instrumento" />
+                <ScalarProperty Name="nombre_instrumento" ColumnName="nombre_instrumento" />
+                <ScalarProperty Name="id_instrumento" ColumnName="id_instrumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservas">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
+                <ScalarProperty Name="id_horario" ColumnName="id_horario" />
+                <ScalarProperty Name="cli_dni" ColumnName="cli_dni" />
+                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -12,18 +12,23 @@ namespace CapaDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Sala
+    public partial class Reserva
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sala()
+        public Reserva()
         {
-            this.Reserva = new HashSet<Reserva>();
+            this.DetalleReserva = new HashSet<DetalleReserva>();
         }
     
-        public int cod_sala { get; set; }
-        public Nullable<int> num_sala { get; set; }
+        public int id_reserva { get; set; }
+        public Nullable<int> cli_dni { get; set; }
+        public Nullable<int> id_horario { get; set; }
+        public Nullable<int> cod_sala { get; set; }
     
+        public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reserva> Reserva { get; set; }
+        public virtual ICollection<DetalleReserva> DetalleReserva { get; set; }
+        public virtual Horario Horario { get; set; }
+        public virtual Sala Sala { get; set; }
     }
 }
