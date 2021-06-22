@@ -28,5 +28,11 @@ namespace CapaPresentacion
             mgraphics.FillRectangle(lgb, area);
             mgraphics.DrawRectangle(pen, area);
         }
+
+        private void btnGestionarInstrumentos_Click(object sender, EventArgs e)
+        {
+            FrmGestionInstrumentos frm = new FrmGestionInstrumentos();
+            frm.ShowDialog();
+        }
     }
 }
