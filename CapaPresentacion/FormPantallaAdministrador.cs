@@ -37,7 +37,8 @@ namespace CapaPresentacion
 
         private void btnVerCliRegistrados_Click(object sender, EventArgs e)
         {
-
+            FrmListadoCliente frm = new FrmListadoCliente();
+            frm.ShowDialog();
         }
     }
 }

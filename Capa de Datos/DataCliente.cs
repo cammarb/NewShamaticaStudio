@@ -76,6 +76,54 @@ namespace CapaDatos
 
             }
         }
-        
-   }
+        public List<Cliente> ListarClientePorNombre(string contenido)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_nombre.Contains(contenido))
+                               select alguien).ToList();
+            return encontrados;
+        }
+        public List<Cliente> ListarClientePorDNI(int dni)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_dni.ToString().Equals(dni))
+                               select alguien).ToList();
+            return encontrados;
+        }
+        public List<Cliente> ListarClientePorUniversidad(string uniservidad)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_universidad.Contains(uniservidad))
+                               select alguien).ToList();
+            return encontrados;
+        }
+        public List<Cliente> ListarClientePorSexo(string sexo)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_sexo.Contains(sexo))
+                               select alguien).ToList();
+            return encontrados;
+        }
+        public List<Cliente> ListarClientesPorDistrito(string distrito)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_distrito.Contains(distrito))
+                               select alguien).ToList();
+            return encontrados;
+        }
+        public List<Cliente> ListarClientePorEdad(string edad)
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var encontrados = (from alguien in contexto.Clientes
+                               where (alguien.cli_edad.ToString().Contains(edad))
+                               select alguien).ToList();
+            return encontrados;
+        }
+
+    }
 }

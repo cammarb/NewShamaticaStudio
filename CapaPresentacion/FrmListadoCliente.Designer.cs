@@ -53,7 +53,9 @@ namespace CapaPresentacion
             "Dni",
             "Edad",
             "Sexo",
-            "Universidad"});
+            "Universidad",
+            "Distrito",
+            "Nombre"});
             this.cbxFiltrado.Location = new System.Drawing.Point(118, 52);
             this.cbxFiltrado.Name = "cbxFiltrado";
             this.cbxFiltrado.Size = new System.Drawing.Size(121, 24);
@@ -74,6 +76,7 @@ namespace CapaPresentacion
             this.tbxMiscelaneo.Name = "tbxMiscelaneo";
             this.tbxMiscelaneo.Size = new System.Drawing.Size(120, 22);
             this.tbxMiscelaneo.TabIndex = 3;
+            this.tbxMiscelaneo.TextChanged += new System.EventHandler(this.tbxMiscelaneo_TextChanged);
             // 
             // dgClientes
             // 
@@ -82,14 +85,14 @@ namespace CapaPresentacion
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 24;
-            this.dgClientes.Size = new System.Drawing.Size(421, 221);
+            this.dgClientes.Size = new System.Drawing.Size(630, 221);
             this.dgClientes.TabIndex = 4;
             // 
             // FrmListadoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(668, 348);
             this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.tbxMiscelaneo);
             this.Controls.Add(this.lblListado);
