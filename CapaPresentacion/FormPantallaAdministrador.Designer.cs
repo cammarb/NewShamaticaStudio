@@ -122,6 +122,7 @@ namespace CapaPresentacion
             this.btnVerCliRegistrados.TabIndex = 58;
             this.btnVerCliRegistrados.Text = "Ver Clientes Registrados";
             this.btnVerCliRegistrados.UseVisualStyleBackColor = false;
+            this.btnVerCliRegistrados.Click += new System.EventHandler(this.btnVerCliRegistrados_Click);
             // 
             // btnGestionarClientes
             // 

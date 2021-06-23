@@ -34,5 +34,10 @@ namespace CapaPresentacion
             FrmGestionInstrumentos frm = new FrmGestionInstrumentos();
             frm.ShowDialog();
         }
+
+        private void btnVerCliRegistrados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

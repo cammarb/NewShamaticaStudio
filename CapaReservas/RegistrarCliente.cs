@@ -23,6 +23,10 @@ namespace CapaReservas
         {
             return objDataCliente.ClienteExiste(objcliente);
         }
+        public List<Cliente> ListarCliente()
+        {
+            return objDataCliente.Listarclientesregistrados();
+        }
 
 
     }
