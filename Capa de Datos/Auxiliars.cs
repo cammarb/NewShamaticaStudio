@@ -13,4 +13,12 @@ namespace Capa_de_Datos
         public int codsala { get; set; }
         public int numsala { get; set; }
     }
+
+    //public class EntitySalaReserva
+    //{
+    //    public string dni { get; set; }
+    //    public string nombre { get; set; }
+    //    public int codsala { get; set; }
+    //    public int numsala { get; set; }
+    //}
 }

@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using CapaDatos;
+using CapaReservas;
 
 namespace CapaPresentacion
 {
-    public partial class FormPantallaCliente : Form
+    public partial class FormRegistrarReserva : Form
     {
-        public FormPantallaCliente()
+        RegistrarReserva objRegistrarReserva = new RegistrarReserva();
+        public FormRegistrarReserva()
         {
             InitializeComponent();
         }
 
-        private void FormPantallaCliente_Paint(object sender, PaintEventArgs e)
+        private void FormRegistrarReserva_Paint(object sender, PaintEventArgs e)
         {
             Graphics mgraphics = e.Graphics;
             Pen pen = new Pen(Color.FromArgb(92, 37, 141), 1);
@@ -29,16 +32,9 @@ namespace CapaPresentacion
             mgraphics.DrawRectangle(pen, area);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRegistrarReserva_Click(object sender, EventArgs e)
         {
-            FormRegistrarReserva frm = new FormRegistrarReserva();
-            frm.ShowDialog();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormVerReservas frm = new FormVerReservas();
-            frm.ShowDialog();
         }
     }
 }

@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="DataAdmin.cs" />
     <Compile Include="DataCliente.cs" />
+    <Compile Include="DataReserva.cs" />
     <Compile Include="DataSala.cs" />
     <Compile Include="DataUsuario.cs" />
     <Compile Include="DetalleReserva.cs">

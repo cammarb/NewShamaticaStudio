@@ -89,6 +89,18 @@
     <Compile Include="FormRegistrarCliente.Designer.cs">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarReserva.Designer.cs">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerReservas.Designer.cs">
+      <DependentUpon>FormVerReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormIngresarAdministrador.resx">
@@ -108,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarCliente.resx">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarReserva.resx">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerReservas.resx">
+      <DependentUpon>FormVerReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
