@@ -19,7 +19,6 @@ namespace CapaPresentacion
         public static string userLogin;
         public static string userRol;
 
-
         public FormIngresoCliente()
         {
             InitializeComponent();

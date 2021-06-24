@@ -49,7 +49,7 @@ namespace CapaPresentacion
             this.btnRegistrarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarReserva.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarReserva.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarReserva.Location = new System.Drawing.Point(626, 545);
+            this.btnRegistrarReserva.Location = new System.Drawing.Point(628, 545);
             this.btnRegistrarReserva.Name = "btnRegistrarReserva";
             this.btnRegistrarReserva.Size = new System.Drawing.Size(249, 71);
             this.btnRegistrarReserva.TabIndex = 58;
@@ -80,9 +80,9 @@ namespace CapaPresentacion
             // 
             this.Horario.FormattingEnabled = true;
             this.Horario.ItemHeight = 20;
-            this.Horario.Location = new System.Drawing.Point(130, 323);
+            this.Horario.Location = new System.Drawing.Point(130, 318);
             this.Horario.Name = "Horario";
-            this.Horario.Size = new System.Drawing.Size(289, 184);
+            this.Horario.Size = new System.Drawing.Size(289, 224);
             this.Horario.TabIndex = 60;
             // 
             // label2
@@ -111,7 +111,7 @@ namespace CapaPresentacion
             // 
             // txtContraLoginCliente
             // 
-            this.txtContraLoginCliente.Location = new System.Drawing.Point(626, 443);
+            this.txtContraLoginCliente.Location = new System.Drawing.Point(630, 486);
             this.txtContraLoginCliente.Name = "txtContraLoginCliente";
             this.txtContraLoginCliente.Size = new System.Drawing.Size(247, 26);
             this.txtContraLoginCliente.TabIndex = 66;
@@ -122,7 +122,7 @@ namespace CapaPresentacion
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(621, 396);
+            this.label4.Location = new System.Drawing.Point(625, 439);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 26);
             this.label4.TabIndex = 65;
@@ -130,7 +130,7 @@ namespace CapaPresentacion
             // 
             // txtDNILoginCliente
             // 
-            this.txtDNILoginCliente.Location = new System.Drawing.Point(626, 319);
+            this.txtDNILoginCliente.Location = new System.Drawing.Point(630, 389);
             this.txtDNILoginCliente.Name = "txtDNILoginCliente";
             this.txtDNILoginCliente.Size = new System.Drawing.Size(247, 26);
             this.txtDNILoginCliente.TabIndex = 64;
@@ -141,7 +141,7 @@ namespace CapaPresentacion
             this.lblDni.BackColor = System.Drawing.Color.Transparent;
             this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDni.ForeColor = System.Drawing.Color.White;
-            this.lblDni.Location = new System.Drawing.Point(621, 274);
+            this.lblDni.Location = new System.Drawing.Point(625, 344);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(56, 26);
             this.lblDni.TabIndex = 63;
@@ -153,7 +153,7 @@ namespace CapaPresentacion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(621, 189);
+            this.label5.Location = new System.Drawing.Point(623, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(312, 29);
             this.label5.TabIndex = 67;
@@ -178,6 +178,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label1);
             this.Name = "FormRegistrarReserva";
             this.Text = "FormRegistrarReserva";
+            this.Load += new System.EventHandler(this.FormRegistrarReserva_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormRegistrarReserva_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
