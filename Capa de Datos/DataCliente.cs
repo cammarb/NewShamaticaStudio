@@ -124,6 +124,57 @@ namespace CapaDatos
                                select alguien).ToList();
             return encontrados;
         }
+        public List<EntityNumGeneroCliente> ListadoAgrupadoPorGeneroPorDefault()
+        {
+            List<EntityNumGeneroCliente> objNum = new List<EntityNumGeneroCliente>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var outcome = from clientes in contexto.Clientes
+                          group clientes by clientes.cli_sexo into NuevoGrupo
+                          orderby NuevoGrupo.Key
+                          select NuevoGrupo;
+            foreach(var clientes in outcome)
+            {
+                EntityNumGeneroCliente obj = new EntityNumGeneroCliente();
+                obj.genero = clientes.Key;
+                obj.numclientes = clientes.Count();
+                objNum.Add(obj);
+            }
+            return objNum;
+        }
+        public List<EntityNumClienteporDistrito> ListadoAgrupadoPorDistritoDefault()
+        {
+            List<EntityNumClienteporDistrito> objNum = new List<EntityNumClienteporDistrito>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var outcome = from clientes in contexto.Clientes
+                          group clientes by clientes.cli_distrito into NuevoGrupo
+                          orderby NuevoGrupo.Key
+                          select NuevoGrupo;
+            foreach(var clientes in outcome)
+            {
+                EntityNumClienteporDistrito obj = new EntityNumClienteporDistrito();
+                obj.distrito = clientes.Key;
+                obj.numclientes = clientes.Count();
+                objNum.Add(obj);
+            }
+            return objNum;
+        }
+        public List<EntityNumClienteporUniversidad> ListadoAgrupadoPorUniversidadDefault()
+        {
+            List<EntityNumClienteporUniversidad> objNum = new List<EntityNumClienteporUniversidad>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var outcome = from clientes in contexto.Clientes
+                          group clientes by clientes.cli_universidad into NuevoGrupo
+                          orderby NuevoGrupo.Key
+                          select NuevoGrupo;
+            foreach(var clientes in outcome)
+            {
+                EntityNumClienteporUniversidad obj = new EntityNumClienteporUniversidad();
+                obj.universidad = clientes.Key;
+                obj.numclientes = clientes.Count();
+                objNum.Add(obj);
+            }
+            return objNum;
+        }
 
     }
 }

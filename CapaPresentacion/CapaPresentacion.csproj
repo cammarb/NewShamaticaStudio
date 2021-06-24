@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,6 +91,12 @@
     <Compile Include="FormRegistrarCliente.Designer.cs">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarReserva.Designer.cs">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +114,12 @@
     </Compile>
     <Compile Include="FrmListadoCliente.Designer.cs">
       <DependentUpon>FrmListadoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportePorGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportePorGenero.Designer.cs">
+      <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +141,9 @@
     <EmbeddedResource Include="FormRegistrarCliente.resx">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarReserva.resx">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionarCliente.resx">
       <DependentUpon>FrmGestionarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoCliente.resx">
       <DependentUpon>FrmListadoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportePorGenero.resx">
+      <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
