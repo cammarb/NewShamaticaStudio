@@ -45,7 +45,6 @@ namespace CapaPresentacion
             objReserva.cod_sala = Convert.ToInt32(cboxSala.Text);
             DateTime x = new DateTime();
           
-          
 
             var res = objRegistrarReserva.ReservaExistente(objReserva);
 
