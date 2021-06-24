@@ -55,6 +55,10 @@ namespace CapaPresentacion
                 if (cbxFiltrado.Text.Equals("Edad"))
                 {
                     dgClientes.DataSource = objOpCliente.ListarClientePorEdad(Convert.ToInt32(tbxMiscelaneo.Text)); LimpiarDataGridView();
+                    if (tbxMiscelaneo.Text.Equals(""))
+                    {
+                        tbxMiscelaneo.Text = "0";
+                    }
                 }
                 if (cbxFiltrado.Text.Equals("Distrito"))
                 {
@@ -67,6 +71,14 @@ namespace CapaPresentacion
                 if (cbxFiltrado.Text.Equals("Universidad"))
                 {
                     dgClientes.DataSource = objOpCliente.ListarClientePorUniversidad(tbxMiscelaneo.Text); LimpiarDataGridView();
+                }
+                if (cbxFiltrado.Text.Equals("Dni"))
+                {
+                    dgClientes.DataSource = objOpCliente.ListarClientePorDNI(tbxMiscelaneo.Text); LimpiarDataGridView();
+                    if (tbxMiscelaneo.Text.Equals(""))
+                    {
+                        tbxMiscelaneo.Text = "0";
+                    }
                 }
             }
             else

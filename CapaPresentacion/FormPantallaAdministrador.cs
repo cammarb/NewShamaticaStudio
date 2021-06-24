@@ -40,5 +40,11 @@ namespace CapaPresentacion
             FrmListadoCliente frm = new FrmListadoCliente();
             frm.ShowDialog();
         }
+
+        private void btnGestionarClientes_Click(object sender, EventArgs e)
+        {
+            FrmGestionarCliente frm = new FrmGestionarCliente();
+            frm.ShowDialog();
+        }
     }
 }

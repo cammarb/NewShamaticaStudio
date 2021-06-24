@@ -138,6 +138,7 @@ namespace CapaPresentacion
             this.btnGestionarClientes.TabIndex = 59;
             this.btnGestionarClientes.Text = "Gestionar Clientes";
             this.btnGestionarClientes.UseVisualStyleBackColor = false;
+            this.btnGestionarClientes.Click += new System.EventHandler(this.btnGestionarClientes_Click);
             // 
             // btnGestionarInstrumentos
             // 

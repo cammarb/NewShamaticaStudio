@@ -23,6 +23,14 @@ namespace CapaReservas
         {
             return objDataCliente.ClienteExiste(objcliente);
         }
+        public string ModificarCliente(Cliente objCliente)
+        {
+            return objDataCliente.ModificarCliente(objCliente);
+        }
+        public string EliminarCliente(int dni)
+        {
+            return objDataCliente.EliminarCliente(dni);
+        }
         public List<Cliente> ListarCliente()
         {
             return objDataCliente.Listarclientesregistrados();
@@ -31,7 +39,7 @@ namespace CapaReservas
         {
             return objDataCliente.ListarClientePorNombre(contenido);
         }
-        public List<Cliente> ListarClientePorDNI(int dni)
+        public List<Cliente> ListarClientePorDNI(string dni)
         {
             return objDataCliente.ListarClientePorDNI(dni);
         }

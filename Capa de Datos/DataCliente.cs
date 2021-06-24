@@ -65,7 +65,7 @@ namespace CapaDatos
             }
         }
 
-        public string EliminarCliente(string dni)
+        public string EliminarCliente(int dni)
         {
             using ( var contexto = new ShamaticaStudioEntities())
             {
@@ -84,11 +84,11 @@ namespace CapaDatos
                                select alguien).ToList();
             return encontrados;
         }
-        public List<Cliente> ListarClientePorDNI(int dni)
+        public List<Cliente> ListarClientePorDNI(string dni)
         {
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
             var encontrados = (from alguien in contexto.Clientes
-                               where (alguien.cli_dni.ToString().Equals(dni))
+                               where (alguien.cli_dni.ToString().Contains(dni))
                                select alguien).ToList();
             return encontrados;
         }
