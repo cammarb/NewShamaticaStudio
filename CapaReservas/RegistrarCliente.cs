@@ -59,7 +59,18 @@ namespace CapaReservas
         {
             return objDataCliente.ListarClientePorEdad(Convert.ToString(edad));
         }
+        public List<EntityNumGeneroCliente> ListadoClientePorGeneroDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorGeneroPorDefault();
+        }
+        public List<EntityNumClienteporDistrito> ListadoAgrupadoPorDistritoDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorDistritoDefault();
+        }
 
-
+        public List<EntityNumClienteporUniversidad> ListadoAgrupadoPorUniversadDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorUniversidadDefault();
+        }
     }
 }

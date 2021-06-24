@@ -46,5 +46,11 @@ namespace CapaPresentacion
             FrmGestionarCliente frm = new FrmGestionarCliente();
             frm.ShowDialog();
         }
+
+        private void btnReportePorGenero_Click(object sender, EventArgs e)
+        {
+            FrmReportePorGenero frm = new FrmReportePorGenero();
+            frm.ShowDialog();
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace CapaPresentacion
             this.btnVerCliRegistrados = new System.Windows.Forms.Button();
             this.btnGestionarClientes = new System.Windows.Forms.Button();
             this.btnGestionarInstrumentos = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnReportePorGenero = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -156,19 +156,20 @@ namespace CapaPresentacion
             this.btnGestionarInstrumentos.UseVisualStyleBackColor = false;
             this.btnGestionarInstrumentos.Click += new System.EventHandler(this.btnGestionarInstrumentos_Click);
             // 
-            // button5
+            // btnReportePorGenero
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(601, 210);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(188, 46);
-            this.button5.TabIndex = 61;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnReportePorGenero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportePorGenero.FlatAppearance.BorderSize = 0;
+            this.btnReportePorGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportePorGenero.ForeColor = System.Drawing.Color.White;
+            this.btnReportePorGenero.Location = new System.Drawing.Point(601, 210);
+            this.btnReportePorGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReportePorGenero.Name = "btnReportePorGenero";
+            this.btnReportePorGenero.Size = new System.Drawing.Size(188, 46);
+            this.btnReportePorGenero.TabIndex = 61;
+            this.btnReportePorGenero.Text = "Por genero";
+            this.btnReportePorGenero.UseVisualStyleBackColor = false;
+            this.btnReportePorGenero.Click += new System.EventHandler(this.btnReportePorGenero_Click);
             // 
             // button6
             // 
@@ -221,7 +222,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnReportePorGenero);
             this.Controls.Add(this.btnGestionarInstrumentos);
             this.Controls.Add(this.btnGestionarClientes);
             this.Controls.Add(this.btnVerCliRegistrados);
@@ -250,7 +251,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnVerCliRegistrados;
         private System.Windows.Forms.Button btnGestionarClientes;
         private System.Windows.Forms.Button btnGestionarInstrumentos;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnReportePorGenero;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
