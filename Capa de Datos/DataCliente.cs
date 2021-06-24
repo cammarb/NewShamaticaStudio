@@ -17,6 +17,19 @@ namespace CapaDatos
                 return "Se registro exitosamente";
             }
         }
+
+        public Cliente BuscarCliente(int dni)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var result = (from someone in contexto.Clientes
+                              where someone.cli_dni == dni
+                              select someone).SingleOrDefault();
+                return result;
+            }
+        }
+
+
         public Cliente ClienteExistente(Cliente objcliente)
         {
             using (var contexto = new ShamaticaStudioEntities())
@@ -26,8 +39,8 @@ namespace CapaDatos
                               select someone).SingleOrDefault();
                 return result;
             }
-
         }
+
         public Cliente ClienteExiste(Cliente objcliente)
         {
             using (var contexto = new ShamaticaStudioEntities())
