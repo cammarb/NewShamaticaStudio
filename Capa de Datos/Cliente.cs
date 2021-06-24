@@ -14,6 +14,12 @@ namespace CapaDatos
     
     public partial class Cliente
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cliente()
+        {
+            this.Reserva = new HashSet<Reserva>();
+        }
+    
         public int cli_dni { get; set; }
         public string cli_nombre { get; set; }
         public Nullable<int> cli_edad { get; set; }
@@ -23,5 +29,8 @@ namespace CapaDatos
         public string cli_correo { get; set; }
         public Nullable<int> cod_sala { get; set; }
         public string cli_banda { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reserva> Reserva { get; set; }
     }
 }
