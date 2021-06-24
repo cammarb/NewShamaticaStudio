@@ -19,6 +19,7 @@ namespace CapaPresentacion
         public static string userLogin;
         public static string userRol;
 
+        DataCliente objDataCliente = new DataCliente();
 
         public FormIngresoCliente()
         {
@@ -43,7 +44,8 @@ namespace CapaPresentacion
                     userLogin = kel.login;
                     userRol = kel.rol;
 
-                    FormPantallaCliente frm = new FormPantallaCliente();
+                    Cliente objcliente = objDataCliente.BuscarCliente(Convert.ToInt32(objUsuario.login));
+                    FormPantallaCliente frm = new FormPantallaCliente(objcliente);
                     frm.ShowDialog();
                 }
             }

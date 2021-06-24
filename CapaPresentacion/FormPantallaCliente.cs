@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using CapaDatos;
 
 namespace CapaPresentacion
 {
     public partial class FormPantallaCliente : Form
     {
-        public FormPantallaCliente()
+        Cliente objCliente;
+        public FormPantallaCliente(Cliente objcliente)
         {
             InitializeComponent();
+            objCliente = objcliente;
         }
 
         private void FormPantallaCliente_Paint(object sender, PaintEventArgs e)
@@ -31,7 +34,7 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormRegistrarCliente frm = new FormRegistrarCliente();
+            FormRegistrarReserva frm = new FormRegistrarReserva(objCliente);
             frm.ShowDialog();
         }
     }

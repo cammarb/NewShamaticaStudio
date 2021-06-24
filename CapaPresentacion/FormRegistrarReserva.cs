@@ -15,11 +15,15 @@ namespace CapaPresentacion
 {
     public partial class FormRegistrarReserva : Form
     {
-        public FormRegistrarReserva()
+        Cliente objCliente;
+        RegistrarReserva objRegistrarReserva = new RegistrarReserva();
+        public FormRegistrarReserva(Cliente objcliente)
         {
             InitializeComponent();
+            objCliente = objcliente;
         }
 
+        // Pintar rectángulo con degradado
         private void FormRegistrarReserva_Paint(object sender, PaintEventArgs e)
         {
             Graphics mgraphics = e.Graphics;
@@ -29,6 +33,34 @@ namespace CapaPresentacion
             LinearGradientBrush lgb = new LinearGradientBrush(area, Color.FromArgb(92, 37, 141), Color.FromArgb(67, 137, 162), LinearGradientMode.Vertical);
             mgraphics.FillRectangle(lgb, area);
             mgraphics.DrawRectangle(pen, area);
+        }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            Reserva objReserva = new Reserva();
+
+            objReserva.id_reserva = 1;
+            objReserva.cli_dni = Convert.ToInt32(objCliente.cli_dni);
+            objReserva.id_horario = Convert.ToInt32(cboxHorario.Text);
+            objReserva.cod_sala = Convert.ToInt32(cboxSala.Text);
+            DateTime x = new DateTime();
+          
+          
+
+            var res = objRegistrarReserva.ReservaExistente(objReserva);
+
+            MessageBox.Show("Hola");
+            if (res == null)
+            {
+                MessageBox.Show("Hola2");
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
+            }
+            else
+            {
+                MessageBox.Show("Por favor vuelva a intentarlo");
+              
+            }
+
         }
     }
 }
