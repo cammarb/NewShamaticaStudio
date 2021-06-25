@@ -20,18 +20,19 @@
           <Property Name="cli_dni" Type="int" Nullable="false" />
           <Property Name="cli_nombre" Type="varchar" MaxLength="50" />
           <Property Name="cli_edad" Type="int" />
-          <Property Name="cli_sexo" Type="varchar" MaxLength="10" />
+          <Property Name="cli_sexo" Type="varchar" MaxLength="50" />
           <Property Name="cli_universidad" Type="varchar" MaxLength="50" />
           <Property Name="cli_distrito" Type="varchar" MaxLength="50" />
           <Property Name="cli_correo" Type="varchar" MaxLength="50" />
           <Property Name="codigo_sala" Type="int" />
           <Property Name="cli_banda" Type="varchar" MaxLength="50" />
+          <Property Name="cli_ultimareserva" Type="date" />
         </EntityType>
         <EntityType Name="DetalleReserva">
           <Key>
             <PropertyRef Name="id_detalle" />
           </Key>
-          <Property Name="id_detalle" Type="int" Nullable="false" />
+          <Property Name="id_detalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id2_reserva" Type="int" />
           <Property Name="cli_nombre" Type="varchar" MaxLength="50" />
           <Property Name="hora_reserva" Type="datetime" />
@@ -41,22 +42,23 @@
           <Key>
             <PropertyRef Name="id_horario" />
           </Key>
-          <Property Name="id_horario" Type="int" Nullable="false" />
+          <Property Name="id_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="hora_reserva" Type="datetime" />
         </EntityType>
         <EntityType Name="Instrumento">
           <Key>
             <PropertyRef Name="id_instrumento" />
           </Key>
-          <Property Name="id_instrumento" Type="int" Nullable="false" />
+          <Property Name="id_instrumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_instrumento" Type="varchar" MaxLength="50" />
           <Property Name="costo_instrumento" Type="int" />
+          <Property Name="disponibilidad_instrumento" Type="bit" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
             <PropertyRef Name="id_reserva" />
           </Key>
-          <Property Name="id_reserva" Type="int" Nullable="false" />
+          <Property Name="id_reserva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cliente_dni" Type="int" />
           <Property Name="codigo_horario" Type="int" />
           <Property Name="codigo2_sala" Type="int" />
@@ -66,8 +68,9 @@
           <Key>
             <PropertyRef Name="cod_sala" />
           </Key>
-          <Property Name="cod_sala" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cod_sala" Type="int" Nullable="false" />
           <Property Name="num_sala" Type="int" />
+          <Property Name="disponibilidad_sala" Type="bit" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -94,13 +97,13 @@
       <Schema Namespace="ShamaticaStudioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ShamaticaStudioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Administradores" EntityType="ShamaticaStudioModel.Administrador" />
-          <EntitySet Name="Clientes" EntityType="ShamaticaStudioModel.Cliente" />
           <EntitySet Name="DetalleReservas" EntityType="ShamaticaStudioModel.DetalleReserva" />
           <EntitySet Name="Horarios" EntityType="ShamaticaStudioModel.Horario" />
           <EntitySet Name="Instrumentos" EntityType="ShamaticaStudioModel.Instrumento" />
+          <EntitySet Name="Reservas" EntityType="ShamaticaStudioModel.Reserva" />
           <EntitySet Name="Salas" EntityType="ShamaticaStudioModel.Sala" />
           <EntitySet Name="Usuarios" EntityType="ShamaticaStudioModel.Usuario" />
-          <EntitySet Name="Reservas" EntityType="ShamaticaStudioModel.Reserva" />
+          <EntitySet Name="Clientes" EntityType="ShamaticaStudioModel.Cliente" />
         </EntityContainer>
         <EntityType Name="Administrador">
           <Key>
@@ -110,25 +113,11 @@
           <Property Name="nom_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="correo_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="cli_dni" />
-          </Key>
-          <Property Name="cli_dni" Type="Int32" Nullable="false" />
-          <Property Name="cli_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cli_edad" Type="Int32" />
-          <Property Name="cli_sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cli_universidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cli_distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cli_correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="codigo_sala" Type="Int32" />
-          <Property Name="cli_banda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="DetalleReserva">
           <Key>
             <PropertyRef Name="id_detalle" />
           </Key>
-          <Property Name="id_detalle" Type="Int32" Nullable="false" />
+          <Property Name="id_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id2_reserva" Type="Int32" />
           <Property Name="cli_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="hora_reserva" Type="DateTime" Precision="3" />
@@ -138,23 +127,35 @@
           <Key>
             <PropertyRef Name="id_horario" />
           </Key>
-          <Property Name="id_horario" Type="Int32" Nullable="false" />
+          <Property Name="id_horario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="hora_reserva" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Instrumento">
           <Key>
             <PropertyRef Name="id_instrumento" />
           </Key>
-          <Property Name="id_instrumento" Type="Int32" Nullable="false" />
+          <Property Name="id_instrumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_instrumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="costo_instrumento" Type="Int32" />
+          <Property Name="disponibilidad_instrumento" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="id_reserva" />
+          </Key>
+          <Property Name="id_reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cliente_dni" Type="Int32" />
+          <Property Name="codigo_horario" Type="Int32" />
+          <Property Name="codigo2_sala" Type="Int32" />
+          <Property Name="fecha_reserva" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Sala">
           <Key>
             <PropertyRef Name="cod_sala" />
           </Key>
-          <Property Name="cod_sala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_sala" Type="Int32" Nullable="false" />
           <Property Name="num_sala" Type="Int32" />
+          <Property Name="disponibilidad_sala" Type="Boolean" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -165,15 +166,20 @@
           <Property Name="status" Type="Boolean" />
           <Property Name="rol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Reserva">
+        <EntityType Name="Cliente">
           <Key>
-            <PropertyRef Name="id_reserva" />
+            <PropertyRef Name="cli_dni" />
           </Key>
-          <Property Name="id_reserva" Type="Int32" Nullable="false" />
-          <Property Name="cliente_dni" Type="Int32" />
-          <Property Name="codigo_horario" Type="Int32" />
-          <Property Name="codigo2_sala" Type="Int32" />
-          <Property Name="fecha_reserva" Type="DateTime" Precision="0" />
+          <Property Name="cli_dni" Type="Int32" Nullable="false" />
+          <Property Name="cli_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_edad" Type="Int32" />
+          <Property Name="cli_sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_universidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codigo_sala" Type="Int32" />
+          <Property Name="cli_banda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_ultimareserva" Type="DateTime" Precision="0" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -187,21 +193,6 @@
                 <ScalarProperty Name="correo_admin" ColumnName="correo_admin" />
                 <ScalarProperty Name="nom_admin" ColumnName="nom_admin" />
                 <ScalarProperty Name="dni_admin" ColumnName="dni_admin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.Cliente">
-              <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="cli_banda" ColumnName="cli_banda" />
-                <ScalarProperty Name="codigo_sala" ColumnName="codigo_sala" />
-                <ScalarProperty Name="cli_correo" ColumnName="cli_correo" />
-                <ScalarProperty Name="cli_distrito" ColumnName="cli_distrito" />
-                <ScalarProperty Name="cli_universidad" ColumnName="cli_universidad" />
-                <ScalarProperty Name="cli_sexo" ColumnName="cli_sexo" />
-                <ScalarProperty Name="cli_edad" ColumnName="cli_edad" />
-                <ScalarProperty Name="cli_nombre" ColumnName="cli_nombre" />
-                <ScalarProperty Name="cli_dni" ColumnName="cli_dni" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -227,15 +218,28 @@
           <EntitySetMapping Name="Instrumentos">
             <EntityTypeMapping TypeName="ShamaticaStudioModel.Instrumento">
               <MappingFragment StoreEntitySet="Instrumento">
+                <ScalarProperty Name="disponibilidad_instrumento" ColumnName="disponibilidad_instrumento" />
                 <ScalarProperty Name="costo_instrumento" ColumnName="costo_instrumento" />
                 <ScalarProperty Name="nombre_instrumento" ColumnName="nombre_instrumento" />
                 <ScalarProperty Name="id_instrumento" ColumnName="id_instrumento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Reservas">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
+                <ScalarProperty Name="codigo2_sala" ColumnName="codigo2_sala" />
+                <ScalarProperty Name="codigo_horario" ColumnName="codigo_horario" />
+                <ScalarProperty Name="cliente_dni" ColumnName="cliente_dni" />
+                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Salas">
             <EntityTypeMapping TypeName="ShamaticaStudioModel.Sala">
               <MappingFragment StoreEntitySet="Sala">
+                <ScalarProperty Name="disponibilidad_sala" ColumnName="disponibilidad_sala" />
                 <ScalarProperty Name="num_sala" ColumnName="num_sala" />
                 <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
               </MappingFragment>
@@ -251,14 +255,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reservas">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.Reserva">
-              <MappingFragment StoreEntitySet="Reserva">
-                <ScalarProperty Name="fecha_reserva" ColumnName="fecha_reserva" />
-                <ScalarProperty Name="codigo2_sala" ColumnName="codigo2_sala" />
-                <ScalarProperty Name="codigo_horario" ColumnName="codigo_horario" />
-                <ScalarProperty Name="cliente_dni" ColumnName="cliente_dni" />
-                <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="cli_ultimareserva" ColumnName="cli_ultimareserva" />
+                <ScalarProperty Name="cli_banda" ColumnName="cli_banda" />
+                <ScalarProperty Name="codigo_sala" ColumnName="codigo_sala" />
+                <ScalarProperty Name="cli_correo" ColumnName="cli_correo" />
+                <ScalarProperty Name="cli_distrito" ColumnName="cli_distrito" />
+                <ScalarProperty Name="cli_universidad" ColumnName="cli_universidad" />
+                <ScalarProperty Name="cli_sexo" ColumnName="cli_sexo" />
+                <ScalarProperty Name="cli_edad" ColumnName="cli_edad" />
+                <ScalarProperty Name="cli_nombre" ColumnName="cli_nombre" />
+                <ScalarProperty Name="cli_dni" ColumnName="cli_dni" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
