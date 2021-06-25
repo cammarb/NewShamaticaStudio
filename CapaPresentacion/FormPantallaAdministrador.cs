@@ -52,5 +52,11 @@ namespace CapaPresentacion
             FrmReportePorGenero frm = new FrmReportePorGenero();
             frm.ShowDialog();
         }
+
+        private void btnVerReservas_Click(object sender, EventArgs e)
+        {
+            FrmVerReservasAdministrador frm = new FrmVerReservasAdministrador();
+            frm.ShowDialog();
+        }
     }
 }

@@ -50,8 +50,9 @@ namespace CapaPresentacion
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            objReserva.id_reserva =  rnd.Next(100000,999999);
+           // Random rnd = new Random();
+           // MessageBox.Show("hola/");
+           // objReserva.id_reserva =  rnd.Next(100000,999999);
             objReserva.cliente_dni = objCliente.cli_dni;
             objHorario.id_horario = int.Parse(cboxHorario.Text);
             objReserva.codigo_horario = objHorario.id_horario;

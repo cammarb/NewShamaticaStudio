@@ -106,6 +106,7 @@ namespace CapaPresentacion
             this.btnVerReservas.TabIndex = 57;
             this.btnVerReservas.Text = "Ver Reservas";
             this.btnVerReservas.UseVisualStyleBackColor = false;
+            this.btnVerReservas.Click += new System.EventHandler(this.btnVerReservas_Click);
             // 
             // btnVerCliRegistrados
             // 
