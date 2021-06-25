@@ -29,7 +29,6 @@ namespace CapaDatos
             }
         }
 
-
         public Cliente ClienteExistente(Cliente objcliente)
         {
             using (var contexto = new ShamaticaStudioEntities())

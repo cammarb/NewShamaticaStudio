@@ -20,7 +20,6 @@ namespace CapaPresentacion
         public static string userRol;
 
         DataCliente objDataCliente = new DataCliente();
-
         public FormIngresoCliente()
         {
             InitializeComponent();
@@ -51,7 +50,6 @@ namespace CapaPresentacion
             }
 
         }
-
         bool Validacion()
         {
             if (txtDNILoginCliente.Text.Trim() == "")

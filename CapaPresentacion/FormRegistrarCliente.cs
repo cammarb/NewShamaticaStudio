@@ -49,17 +49,12 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Hola2");
                 MessageBox.Show(objRegistrarCliente.RegistrarClient(objcliente));
-                // MessageBox.Show("Hola");
-               
-
                 objGuardarUsuario.RegistrarUsuario(objUsuario);
             }
             else
             {
                 MessageBox.Show("Ya existe un usuario con estos datos, por favor vuelva a intentarlo");               
             }
-          
-
         }
 
         private void FormRegistrarCliente_Paint(object sender, PaintEventArgs e)

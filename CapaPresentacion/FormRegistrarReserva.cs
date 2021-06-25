@@ -25,15 +25,11 @@ namespace CapaPresentacion
         public FormRegistrarReserva(Cliente objcliente)
         {
             InitializeComponent();
+            // Jalar el dni del cliente
             objCliente = objcliente;
             objSala = new Sala();
             objHorario = new Horario();
             objReserva = new Reserva();
-            
-            
-           
-            
-            
         }
 
         // Pintar rectángulo con degradado
@@ -55,21 +51,14 @@ namespace CapaPresentacion
             objReserva.cliente_dni = objCliente.cli_dni;
             objHorario.id_horario = int.Parse(cboxHorario.Text);
             objReserva.codigo_horario = objHorario.id_horario;
-            // objReserva.id_horario = Convert.ToInt32(cboxHorario.Text);
             objSala.cod_sala = int.Parse(cboxSala.Text);
-           // objReserva.Sala = objSala.cod_sala;
             objReserva.codigo2_sala = objSala.cod_sala;
             objReserva.fecha_reserva = DateTimeFecha.Value.Date;
-           
 
             MessageBox.Show("ga");
-            //MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
 
-            //MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
             var res = objRegistrarReserva.ReservaExistente(objReserva);
-            //var res2 = objRegistrarReserva.IDExiste(objReserva);
-            
-          
+
             if (res == null )
             {
                 MessageBox.Show("hola");              
@@ -77,8 +66,7 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("Por favor vuelva a intentarlo");
-              
+                MessageBox.Show("Por favor vuelva a intentarlo, la reserva en ese horario ya está ocupado");
             }
             
         }

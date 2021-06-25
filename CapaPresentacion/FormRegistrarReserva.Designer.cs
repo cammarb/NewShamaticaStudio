@@ -47,9 +47,10 @@ namespace CapaPresentacion
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(76, 53);
+            this.label1.Location = new System.Drawing.Point(57, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 48);
+            this.label1.Size = new System.Drawing.Size(279, 39);
             this.label1.TabIndex = 33;
             this.label1.Text = "Registrar reserva:";
             // 
@@ -57,10 +58,10 @@ namespace CapaPresentacion
             // 
             this.DateTimeFecha.CustomFormat = "yyyy-MM-dd";
             this.DateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DateTimeFecha.Location = new System.Drawing.Point(96, 261);
-            this.DateTimeFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateTimeFecha.Location = new System.Drawing.Point(72, 212);
+            this.DateTimeFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateTimeFecha.Name = "DateTimeFecha";
-            this.DateTimeFecha.Size = new System.Drawing.Size(269, 22);
+            this.DateTimeFecha.Size = new System.Drawing.Size(203, 20);
             this.DateTimeFecha.TabIndex = 34;
             // 
             // label2
@@ -69,10 +70,9 @@ namespace CapaPresentacion
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(92, 305);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(69, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 29);
+            this.label2.Size = new System.Drawing.Size(74, 23);
             this.label2.TabIndex = 36;
             this.label2.Text = "Horario";
             // 
@@ -82,10 +82,9 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(92, 231);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(69, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 29);
+            this.label3.Size = new System.Drawing.Size(65, 23);
             this.label3.TabIndex = 37;
             this.label3.Text = "Fecha:";
             // 
@@ -95,10 +94,9 @@ namespace CapaPresentacion
             this.cboxSala.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cboxSala.Location = new System.Drawing.Point(96, 187);
-            this.cboxSala.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxSala.Location = new System.Drawing.Point(72, 152);
             this.cboxSala.Name = "cboxSala";
-            this.cboxSala.Size = new System.Drawing.Size(269, 24);
+            this.cboxSala.Size = new System.Drawing.Size(203, 21);
             this.cboxSala.TabIndex = 38;
             // 
             // label4
@@ -107,10 +105,9 @@ namespace CapaPresentacion
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(92, 155);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(69, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 29);
+            this.label4.Size = new System.Drawing.Size(48, 23);
             this.label4.TabIndex = 39;
             this.label4.Text = "Sala";
             // 
@@ -120,10 +117,9 @@ namespace CapaPresentacion
             this.cboxHorario.Items.AddRange(new object[] {
             "8",
             "9"});
-            this.cboxHorario.Location = new System.Drawing.Point(96, 337);
-            this.cboxHorario.Margin = new System.Windows.Forms.Padding(4);
+            this.cboxHorario.Location = new System.Drawing.Point(72, 274);
             this.cboxHorario.Name = "cboxHorario";
-            this.cboxHorario.Size = new System.Drawing.Size(269, 24);
+            this.cboxHorario.Size = new System.Drawing.Size(203, 21);
             this.cboxHorario.TabIndex = 40;
             // 
             // btnReservar
@@ -133,10 +129,10 @@ namespace CapaPresentacion
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservar.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.ForeColor = System.Drawing.Color.White;
-            this.btnReservar.Location = new System.Drawing.Point(496, 400);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReservar.Location = new System.Drawing.Point(372, 325);
+            this.btnReservar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(233, 68);
+            this.btnReservar.Size = new System.Drawing.Size(175, 55);
             this.btnReservar.TabIndex = 41;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = false;
@@ -145,10 +141,9 @@ namespace CapaPresentacion
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(496, 187);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkedListBox1.Location = new System.Drawing.Point(372, 152);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(232, 174);
+            this.checkedListBox1.Size = new System.Drawing.Size(175, 139);
             this.checkedListBox1.TabIndex = 42;
             // 
             // label5
@@ -157,19 +152,18 @@ namespace CapaPresentacion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(491, 155);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(368, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 29);
+            this.label5.Size = new System.Drawing.Size(216, 23);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Sala";
+            this.label5.Text = "Intrumentos disponibles";
             // 
             // FormRegistrarReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(767, 505);
+            this.ClientSize = new System.Drawing.Size(575, 410);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.btnReservar);
@@ -180,7 +174,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DateTimeFecha);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormRegistrarReserva";
             this.Text = "FormRegistrarReserva";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormRegistrarReserva_Paint);
