@@ -11,16 +11,29 @@ using System.Drawing.Drawing2D;
 using CapaDatos;
 using CapaReservas;
 
+
 namespace CapaPresentacion
 {
     public partial class FormRegistrarReserva : Form
     {
         Cliente objCliente;
+        Sala objSala;
+        Horario objHorario;
+        Reserva objReserva;
+        
         RegistrarReserva objRegistrarReserva = new RegistrarReserva();
         public FormRegistrarReserva(Cliente objcliente)
         {
             InitializeComponent();
             objCliente = objcliente;
+            objSala = new Sala();
+            objHorario = new Horario();
+            objReserva = new Reserva();
+            
+            
+           
+            
+            
         }
 
         // Pintar rectángulo con degradado
@@ -37,29 +50,38 @@ namespace CapaPresentacion
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            Reserva objReserva = new Reserva();
+            Random rnd = new Random();
+            objReserva.id_reserva =  rnd.Next(100000,999999);
+            objReserva.cliente_dni = objCliente.cli_dni;
+            objHorario.id_horario = int.Parse(cboxHorario.Text);
+            objReserva.codigo_horario = objHorario.id_horario;
+            // objReserva.id_horario = Convert.ToInt32(cboxHorario.Text);
+            objSala.cod_sala = int.Parse(cboxSala.Text);
+           // objReserva.Sala = objSala.cod_sala;
+            objReserva.codigo2_sala = objSala.cod_sala;
+            objReserva.fecha_reserva = DateTimeFecha.Value.Date;
+           
 
-            objReserva.id_reserva = 1;
-            objReserva.cli_dni = Convert.ToInt32(objCliente.cli_dni);
-            objReserva.id_horario = Convert.ToInt32(cboxHorario.Text);
-            objReserva.cod_sala = Convert.ToInt32(cboxSala.Text);
-            DateTime x = new DateTime();
-          
+            MessageBox.Show("ga");
+            //MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
 
+            //MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
             var res = objRegistrarReserva.ReservaExistente(objReserva);
-
-            MessageBox.Show("Hola");
-            if (res == null)
+            //var res2 = objRegistrarReserva.IDExiste(objReserva);
+            
+          
+            if (res == null )
             {
-                MessageBox.Show("Hola2");
-                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
+                MessageBox.Show("hola");              
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));               
             }
             else
             {
                 MessageBox.Show("Por favor vuelva a intentarlo");
               
             }
-
+            
         }
     }
 }
+
