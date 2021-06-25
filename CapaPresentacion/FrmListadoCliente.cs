@@ -39,9 +39,9 @@ namespace CapaPresentacion
             dgClientes.Columns["cli_distrito"].HeaderText = "Distrito";
             dgClientes.Columns["cli_sexo"].HeaderText = "Sexo";
             dgClientes.Columns["cli_correo"].Visible = false;
-            dgClientes.Columns["cod_sala"].Visible = false;
+            dgClientes.Columns["codigo_sala"].Visible = false;
             dgClientes.Columns["cli_banda"].Visible = false;
-            dgClientes.Columns["Reserva"].Visible = false;
+           // dgClientes.Columns["Reserva"].Visible = false;
         }
 
         private void tbxMiscelaneo_TextChanged(object sender, EventArgs e)

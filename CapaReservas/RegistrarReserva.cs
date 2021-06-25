@@ -9,7 +9,7 @@ namespace CapaReservas
 {
     public class RegistrarReserva
     {
-        DataReserva objDataReserva = new CapaDatos.DataReserva();
+        DataReserva objDataReserva = new DataReserva();
         public string RegistrarReservation(Reserva objreserva)
         {
             return objDataReserva.RegistrarReservation(objreserva);
@@ -17,6 +17,10 @@ namespace CapaReservas
         public Reserva ReservaExistente(Reserva objreserva)
         {
             return objDataReserva.ReservaExistente(objreserva);
+        }
+        public Reserva IDExiste(Reserva objreserva)
+        {
+            return objDataReserva.IDExiste(objreserva);
         }
     }
 }

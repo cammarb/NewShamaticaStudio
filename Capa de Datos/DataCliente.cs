@@ -70,7 +70,7 @@ namespace CapaDatos
                 modifi.cli_correo = objcliente.cli_correo;
                 modifi.cli_banda = objcliente.cli_banda;
                 modifi.cli_sexo = objcliente.cli_sexo;
-                modifi.cod_sala = objcliente.cod_sala;
+                modifi.codigo_sala = objcliente.codigo_sala;
                 modifi.cli_dni = objcliente.cli_dni;
                 modifi.cli_universidad = objcliente.cli_universidad;
                 contexto.SaveChanges();
