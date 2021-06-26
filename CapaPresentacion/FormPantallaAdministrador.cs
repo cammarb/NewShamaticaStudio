@@ -64,5 +64,12 @@ namespace CapaPresentacion
             FrmHorariosYSalas frm = new FrmHorariosYSalas();
             frm.ShowDialog();
         }
+
+        private void btnHorarioMasReservado_Click(object sender, EventArgs e)
+        {
+            FrmHorariosMasFrecuentados frm = new FrmHorariosMasFrecuentados();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

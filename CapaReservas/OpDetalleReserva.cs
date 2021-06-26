@@ -9,12 +9,12 @@ namespace CapaReservas
 {
      public class OpDetalleReserva
     {
-        DataDetalleReserva objDataDetalle = new DetalleReserva();
+       /* DataDetalleReserva objDataDetalle = new DetalleReserva();
         public string AñadidirDetalleReserva()
         {
             return objDataDetalle;
 
-        }
+        }*/
 
     }
 }

@@ -39,7 +39,7 @@ namespace CapaPresentacion
             this.btnGestionarClientes = new System.Windows.Forms.Button();
             this.btnGestionarInstrumentos = new System.Windows.Forms.Button();
             this.btnReportePorGenero = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnHorarioMasReservado = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnSalasYHorarios = new System.Windows.Forms.Button();
@@ -173,19 +173,20 @@ namespace CapaPresentacion
             this.btnReportePorGenero.UseVisualStyleBackColor = false;
             this.btnReportePorGenero.Click += new System.EventHandler(this.btnReportePorGenero_Click);
             // 
-            // button6
+            // btnHorarioMasReservado
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(601, 286);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(188, 46);
-            this.button6.TabIndex = 62;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnHorarioMasReservado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHorarioMasReservado.FlatAppearance.BorderSize = 0;
+            this.btnHorarioMasReservado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarioMasReservado.ForeColor = System.Drawing.Color.White;
+            this.btnHorarioMasReservado.Location = new System.Drawing.Point(601, 286);
+            this.btnHorarioMasReservado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHorarioMasReservado.Name = "btnHorarioMasReservado";
+            this.btnHorarioMasReservado.Size = new System.Drawing.Size(188, 46);
+            this.btnHorarioMasReservado.TabIndex = 62;
+            this.btnHorarioMasReservado.Text = "Horario mas Reservado";
+            this.btnHorarioMasReservado.UseVisualStyleBackColor = false;
+            this.btnHorarioMasReservado.Click += new System.EventHandler(this.btnHorarioMasReservado_Click);
             // 
             // button7
             // 
@@ -240,7 +241,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.btnSalasYHorarios);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnHorarioMasReservado);
             this.Controls.Add(this.btnReportePorGenero);
             this.Controls.Add(this.btnGestionarInstrumentos);
             this.Controls.Add(this.btnGestionarClientes);
@@ -271,7 +272,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnGestionarClientes;
         private System.Windows.Forms.Button btnGestionarInstrumentos;
         private System.Windows.Forms.Button btnReportePorGenero;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnHorarioMasReservado;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnSalasYHorarios;
