@@ -40,12 +40,14 @@ namespace CapaPresentacion
                 Instrumento objInstrumento = new Instrumento();
                 objInstrumento.nombre_instrumento = tbxNombre.Text;
                 objInstrumento.costo_instrumento = Convert.ToInt32(tbxCosto.Text);
+                objInstrumento.disponibilidad_instrumento = true;
                 MessageBox.Show(objOpInstrumento.RegistarInstrumento(objInstrumento));
             }
             else
             {
                 MessageBox.Show("No se ha podido registrar el instrumento");
             }
+            ActualizarDataGrid();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

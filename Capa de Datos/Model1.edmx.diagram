@@ -4,15 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="85">
+      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="111">
         <EntityTypeShape EntityType="ShamaticaStudioModel.Administrador" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="2.875" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="2.625" PointY="3.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Horario" Width="1.5" PointX="0.875" PointY="3.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Sala" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Horario" Width="1.5" PointX="0.75" PointY="7.375" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="3.375" PointY="7" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.ReservaInstrumento" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Sala" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="6.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
