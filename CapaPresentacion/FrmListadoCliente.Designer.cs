@@ -34,6 +34,7 @@ namespace CapaPresentacion
             this.lblListado = new System.Windows.Forms.Label();
             this.tbxMiscelaneo = new System.Windows.Forms.TextBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.lblPromedio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,11 +89,21 @@ namespace CapaPresentacion
             this.dgClientes.Size = new System.Drawing.Size(630, 221);
             this.dgClientes.TabIndex = 4;
             // 
+            // lblPromedio
+            // 
+            this.lblPromedio.AutoSize = true;
+            this.lblPromedio.Location = new System.Drawing.Point(441, 57);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(140, 17);
+            this.lblPromedio.TabIndex = 5;
+            this.lblPromedio.Text = "Promedio de Edades";
+            // 
             // FrmListadoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 348);
+            this.Controls.Add(this.lblPromedio);
             this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.tbxMiscelaneo);
             this.Controls.Add(this.lblListado);
@@ -114,5 +125,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lblListado;
         private System.Windows.Forms.TextBox tbxMiscelaneo;
         private System.Windows.Forms.DataGridView dgClientes;
+        private System.Windows.Forms.Label lblPromedio;
     }
 }

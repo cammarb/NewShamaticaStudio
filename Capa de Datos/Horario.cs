@@ -15,6 +15,6 @@ namespace CapaDatos
     public partial class Horario
     {
         public int id_horario { get; set; }
-        public Nullable<System.DateTime> hora_reserva { get; set; }
+        public string hora_reserva { get; set; }
     }
 }

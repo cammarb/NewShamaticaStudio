@@ -50,7 +50,10 @@
   <ItemGroup>
     <Compile Include="GuardarUsuario.cs" />
     <Compile Include="IngresarUsuario.cs" />
+    <Compile Include="OpDetalleReserva.cs" />
+    <Compile Include="OpHorario.cs" />
     <Compile Include="OpInstrumento.cs" />
+    <Compile Include="OpSala.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrarCliente.cs" />
     <Compile Include="RegistrarReserva.cs" />

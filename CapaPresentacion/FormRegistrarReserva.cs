@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using CapaDatos;
 using CapaReservas;
+using CapaDatos;
 
 
 namespace CapaPresentacion
@@ -18,6 +19,10 @@ namespace CapaPresentacion
     {
         Cliente objCliente;
         Sala objSala;
+        Instrumento objInstrumento;
+        OpHorario objOpHorario;
+        OpSala objOpSala;
+        OpInstrumento objOpInstrumento;
         Horario objHorario;
         Reserva objReserva;
         
@@ -29,11 +34,11 @@ namespace CapaPresentacion
             objSala = new Sala();
             objHorario = new Horario();
             objReserva = new Reserva();
-            
-            
-           
-            
-            
+            objOpHorario = new OpHorario();
+            objOpSala = new OpSala();
+            objOpInstrumento = new OpInstrumento();
+
+
         }
 
         // Pintar rectángulo con degradado
@@ -54,7 +59,7 @@ namespace CapaPresentacion
            // MessageBox.Show("hola/");
            // objReserva.id_reserva =  rnd.Next(100000,999999);
             objReserva.cliente_dni = objCliente.cli_dni;
-            objHorario.id_horario = int.Parse(cboxHorario.Text);
+            //objHorario.id_horario = int.Parse(cboxHorario.Text);
             objReserva.codigo_horario = objHorario.id_horario;
             // objReserva.id_horario = Convert.ToInt32(cboxHorario.Text);
             objSala.cod_sala = int.Parse(cboxSala.Text);
@@ -82,6 +87,19 @@ namespace CapaPresentacion
               
             }
             
+        }
+
+        private void FormRegistrarReserva_Load(object sender, EventArgs e)
+        {
+            cboxHorario.DataSource = objOpHorario.ListarHorario();
+            cboxHorario.DisplayMember = "hora_reserva";
+            cboxHorario.ValueMember = "id_horario";
+
+            cboxSala.DataSource = objOpSala.ListarSalas();
+            cboxSala.DisplayMember = "nom_sala";
+            cboxSala.ValueMember = "cod_sala";
+
+            //clbInstrumentos.Da
         }
     }
 }

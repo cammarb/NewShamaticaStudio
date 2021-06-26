@@ -72,5 +72,9 @@ namespace CapaReservas
         {
             return objDataCliente.ListadoAgrupadoPorUniversidadDefault();
         }
+        public double PromedioGeneralDeEdadesDeCliente()
+        {
+            return objDataCliente.PromedioDeEdadesDeClientes();
+        }
     }
 }

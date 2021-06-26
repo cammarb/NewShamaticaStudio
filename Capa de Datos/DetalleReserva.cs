@@ -16,8 +16,8 @@ namespace CapaDatos
     {
         public int id_detalle { get; set; }
         public Nullable<int> id2_reserva { get; set; }
-        public string cli_nombre { get; set; }
-        public Nullable<System.DateTime> hora_reserva { get; set; }
-        public Nullable<int> num_sala { get; set; }
+        public string nombre_cliente { get; set; }
+        public string horario_reserva { get; set; }
+        public string nom_sala { get; set; }
     }
 }
