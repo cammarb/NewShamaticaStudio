@@ -58,5 +58,11 @@ namespace CapaPresentacion
             FrmVerReservasAdministrador frm = new FrmVerReservasAdministrador();
             frm.ShowDialog();
         }
+
+        private void btnSalasYHorarios_Click(object sender, EventArgs e)
+        {
+            FrmHorariosYSalas frm = new FrmHorariosYSalas();
+            frm.ShowDialog();
+        }
     }
 }

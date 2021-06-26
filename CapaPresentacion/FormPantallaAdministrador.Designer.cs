@@ -42,6 +42,7 @@ namespace CapaPresentacion
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.btnSalasYHorarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,12 +215,29 @@ namespace CapaPresentacion
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // btnSalasYHorarios
+            // 
+            this.btnSalasYHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSalasYHorarios.FlatAppearance.BorderSize = 0;
+            this.btnSalasYHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalasYHorarios.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalasYHorarios.ForeColor = System.Drawing.Color.White;
+            this.btnSalasYHorarios.Location = new System.Drawing.Point(196, 514);
+            this.btnSalasYHorarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalasYHorarios.Name = "btnSalasYHorarios";
+            this.btnSalasYHorarios.Size = new System.Drawing.Size(268, 55);
+            this.btnSalasYHorarios.TabIndex = 65;
+            this.btnSalasYHorarios.Text = "Salas y Horarios";
+            this.btnSalasYHorarios.UseVisualStyleBackColor = false;
+            this.btnSalasYHorarios.Click += new System.EventHandler(this.btnSalasYHorarios_Click);
+            // 
             // FormPantallaAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(963, 571);
+            this.ClientSize = new System.Drawing.Size(963, 639);
+            this.Controls.Add(this.btnSalasYHorarios);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -256,5 +274,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnSalasYHorarios;
     }
 }

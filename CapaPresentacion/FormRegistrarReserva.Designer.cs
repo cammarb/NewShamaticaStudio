@@ -37,7 +37,7 @@ namespace CapaPresentacion
             this.label4 = new System.Windows.Forms.Label();
             this.cboxHorario = new System.Windows.Forms.ComboBox();
             this.btnReservar = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clbInstrumentos = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -92,9 +92,6 @@ namespace CapaPresentacion
             // cboxSala
             // 
             this.cboxSala.FormattingEnabled = true;
-            this.cboxSala.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.cboxSala.Location = new System.Drawing.Point(96, 187);
             this.cboxSala.Margin = new System.Windows.Forms.Padding(4);
             this.cboxSala.Name = "cboxSala";
@@ -117,9 +114,6 @@ namespace CapaPresentacion
             // cboxHorario
             // 
             this.cboxHorario.FormattingEnabled = true;
-            this.cboxHorario.Items.AddRange(new object[] {
-            "8",
-            "9"});
             this.cboxHorario.Location = new System.Drawing.Point(96, 337);
             this.cboxHorario.Margin = new System.Windows.Forms.Padding(4);
             this.cboxHorario.Name = "cboxHorario";
@@ -142,14 +136,14 @@ namespace CapaPresentacion
             this.btnReservar.UseVisualStyleBackColor = false;
             this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
-            // checkedListBox1
+            // clbInstrumentos
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(496, 187);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(232, 174);
-            this.checkedListBox1.TabIndex = 42;
+            this.clbInstrumentos.FormattingEnabled = true;
+            this.clbInstrumentos.Location = new System.Drawing.Point(496, 187);
+            this.clbInstrumentos.Margin = new System.Windows.Forms.Padding(4);
+            this.clbInstrumentos.Name = "clbInstrumentos";
+            this.clbInstrumentos.Size = new System.Drawing.Size(232, 174);
+            this.clbInstrumentos.TabIndex = 42;
             // 
             // label5
             // 
@@ -160,9 +154,9 @@ namespace CapaPresentacion
             this.label5.Location = new System.Drawing.Point(491, 155);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 29);
+            this.label5.Size = new System.Drawing.Size(144, 29);
             this.label5.TabIndex = 43;
-            this.label5.Text = "Sala";
+            this.label5.Text = "Instrumento";
             // 
             // FormRegistrarReserva
             // 
@@ -171,7 +165,7 @@ namespace CapaPresentacion
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(767, 505);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.clbInstrumentos);
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.cboxHorario);
             this.Controls.Add(this.label4);
@@ -183,6 +177,7 @@ namespace CapaPresentacion
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormRegistrarReserva";
             this.Text = "FormRegistrarReserva";
+            this.Load += new System.EventHandler(this.FormRegistrarReserva_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormRegistrarReserva_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,7 +194,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxHorario;
         private System.Windows.Forms.Button btnReservar;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clbInstrumentos;
         private System.Windows.Forms.Label label5;
     }
 }
