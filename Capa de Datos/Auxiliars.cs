@@ -28,5 +28,12 @@ namespace CapaDatos
         public string universidad { get; set; }
         public int numclientes { get; set; }
     }
+    public class EntityHorarioMasReservado
+    {
+        public int cantidadhorariosrepetidos { get; set; }
+        public string horario { get; set; }
+
+    }
+
 
 }

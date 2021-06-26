@@ -31,8 +31,8 @@ namespace CapaPresentacion
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRealizarReserva = new System.Windows.Forms.Button();
+            this.btnVerReservas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,36 +59,37 @@ namespace CapaPresentacion
             this.label2.TabIndex = 33;
             this.label2.Text = "Reservas";
             // 
-            // button1
+            // btnRealizarReserva
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(153, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 68);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Realizar Reserva";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRealizarReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRealizarReserva.FlatAppearance.BorderSize = 0;
+            this.btnRealizarReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealizarReserva.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealizarReserva.ForeColor = System.Drawing.Color.White;
+            this.btnRealizarReserva.Location = new System.Drawing.Point(153, 193);
+            this.btnRealizarReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRealizarReserva.Name = "btnRealizarReserva";
+            this.btnRealizarReserva.Size = new System.Drawing.Size(187, 68);
+            this.btnRealizarReserva.TabIndex = 34;
+            this.btnRealizarReserva.Text = "Realizar Reserva";
+            this.btnRealizarReserva.UseVisualStyleBackColor = false;
+            this.btnRealizarReserva.Click += new System.EventHandler(this.btnRealizarReserva_Click);
             // 
-            // button2
+            // btnVerReservas
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(153, 303);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 68);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Ver Reserva";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnVerReservas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVerReservas.FlatAppearance.BorderSize = 0;
+            this.btnVerReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerReservas.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerReservas.ForeColor = System.Drawing.Color.White;
+            this.btnVerReservas.Location = new System.Drawing.Point(153, 303);
+            this.btnVerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerReservas.Name = "btnVerReservas";
+            this.btnVerReservas.Size = new System.Drawing.Size(187, 68);
+            this.btnVerReservas.TabIndex = 35;
+            this.btnVerReservas.Text = "Ver Reservas";
+            this.btnVerReservas.UseVisualStyleBackColor = false;
+            this.btnVerReservas.Click += new System.EventHandler(this.btnVerReservas_Click);
             // 
             // FormPantallaCliente
             // 
@@ -96,8 +97,8 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(507, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVerReservas);
+            this.Controls.Add(this.btnRealizarReserva);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -113,7 +114,7 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRealizarReserva;
+        private System.Windows.Forms.Button btnVerReservas;
     }
 }

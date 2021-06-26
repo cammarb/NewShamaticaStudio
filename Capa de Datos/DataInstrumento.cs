@@ -46,5 +46,19 @@ namespace CapaDatos
 
             }
         }
+       /* public bool DisponibilidadInstrumento(int codinstrumento, DateTime fechareserva, string horareserva)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var disponibilidad = contexto.Instrumentos.Find(codinstrumento);
+                modifi.costo_instrumento = objInstrumento.costo_instrumento;
+                modifi.nombre_instrumento = objInstrumento.nombre_instrumento;
+                contexto.SaveChanges();
+                return "El instrumento se modifico exitosamente";
+
+            }
+
+        }*/
+        
     }
 }

@@ -52,5 +52,24 @@ namespace CapaPresentacion
             FrmReportePorGenero frm = new FrmReportePorGenero();
             frm.ShowDialog();
         }
+
+        private void btnVerReservas_Click(object sender, EventArgs e)
+        {
+            FrmVerReservasAdministrador frm = new FrmVerReservasAdministrador();
+            frm.ShowDialog();
+        }
+
+        private void btnSalasYHorarios_Click(object sender, EventArgs e)
+        {
+            FrmHorariosYSalas frm = new FrmHorariosYSalas();
+            frm.ShowDialog();
+        }
+
+        private void btnHorarioMasReservado_Click(object sender, EventArgs e)
+        {
+            FrmHorariosMasFrecuentados frm = new FrmHorariosMasFrecuentados();
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }

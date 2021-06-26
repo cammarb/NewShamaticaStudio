@@ -17,19 +17,47 @@ namespace CapaPresentacion
     public partial class FormRegistrarReserva : Form
     {
         Cliente objCliente;
-        Sala objSala;
-        Horario objHorario;
+        //Sala objSala;
+        Instrumento objInstrumento;
+        OpHorario objOpHorario;
+        OpSala objOpSala;
+        OpInstrumento objOpInstrumento;
+        DataReservaInstrumento objReservaInstruemento;
+        //Horario objHorario;
         Reserva objReserva;
+      
         
         RegistrarReserva objRegistrarReserva = new RegistrarReserva();
         public FormRegistrarReserva(Cliente objcliente)
         {
             InitializeComponent();
-            // Jalar el dni del cliente
             objCliente = objcliente;
-            objSala = new Sala();
-            objHorario = new Horario();
+            //objSala = new Sala();
+            //objHorario = new Horario();
             objReserva = new Reserva();
+            objOpHorario = new OpHorario();
+            objOpSala = new OpSala();
+            objOpInstrumento = new OpInstrumento();
+            objReservaInstruemento = new DataReservaInstrumento();
+
+
+        }
+        private void FormRegistrarReserva_Load(object sender, EventArgs e)
+        {
+            cboxHorario.DataSource = objOpHorario.ListarHorario();
+            cboxHorario.DisplayMember = "hora_reserva";
+            cboxHorario.ValueMember = "id_horario";//int
+            //cboxHorario.BindingContext = this->BindingContext;
+
+
+            cboxSala.DataSource = objOpSala.ListarSalas();
+            cboxSala.DisplayMember = "nom_sala";
+            cboxSala.ValueMember = "cod_sala";//int
+
+            clbInstrumentos.DataSource = objOpInstrumento.ListarInstrumentos();
+            clbInstrumentos.DisplayMember = "nombre_instrumento";
+            clbInstrumentos.ValueMember = "id_instrumento";
+            
         }
 
         // Pintar rectángulo con degradado
@@ -46,30 +74,34 @@ namespace CapaPresentacion
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            objReserva.id_reserva =  rnd.Next(100000,999999);
             objReserva.cliente_dni = objCliente.cli_dni;
-            objHorario.id_horario = int.Parse(cboxHorario.Text);
-            objReserva.codigo_horario = objHorario.id_horario;
-            objSala.cod_sala = int.Parse(cboxSala.Text);
-            objReserva.codigo2_sala = objSala.cod_sala;
+            objReserva.codigo_horario = (int)cboxHorario.SelectedValue;
+            objReserva.codigo2_sala = (int)cboxSala.SelectedValue;
             objReserva.fecha_reserva = DateTimeFecha.Value.Date;
-
             MessageBox.Show("ga");
-
             var res = objRegistrarReserva.ReservaExistente(objReserva);
 
             if (res == null )
             {
                 MessageBox.Show("hola");              
-                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));               
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva)); 
+                
             }
             else
             {
-                MessageBox.Show("Por favor vuelva a intentarlo, la reserva en ese horario ya está ocupado");
+                MessageBox.Show("Por favor vuelva a intentarlo");
+              
             }
-            
+          
+            foreach(Instrumento x in clbInstrumentos.CheckedItems)
+            {
+                objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
+                x.disponibilidad_instrumento = false;
+            }
+
+
         }
+
     }
 }
 

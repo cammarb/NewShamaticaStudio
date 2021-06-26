@@ -12,17 +12,10 @@ namespace CapaDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class ReservaInstrumento
     {
-        public int cli_dni { get; set; }
-        public string cli_nombre { get; set; }
-        public Nullable<int> cli_edad { get; set; }
-        public string cli_sexo { get; set; }
-        public string cli_universidad { get; set; }
-        public string cli_distrito { get; set; }
-        public string cli_correo { get; set; }
-        public Nullable<int> codigo_sala { get; set; }
-        public string cli_banda { get; set; }
-        public Nullable<System.DateTime> cli_ultimareserva { get; set; }
+        public int id_reservainstrumento { get; set; }
+        public Nullable<int> id_reservarel { get; set; }
+        public Nullable<int> id_instrumento { get; set; }
     }
 }

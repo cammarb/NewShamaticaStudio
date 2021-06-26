@@ -109,6 +109,18 @@
     <Compile Include="FrmGestionInstrumentos.Designer.cs">
       <DependentUpon>FrmGestionInstrumentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHorariosMasFrecuentados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorariosMasFrecuentados.Designer.cs">
+      <DependentUpon>FrmHorariosMasFrecuentados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHorariosYSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorariosYSalas.Designer.cs">
+      <DependentUpon>FrmHorariosYSalas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListadoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,18 @@
     </Compile>
     <Compile Include="FrmReportePorGenero.Designer.cs">
       <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReservasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReservasCliente.Designer.cs">
+      <DependentUpon>FrmReservasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerReservasAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerReservasAdministrador.Designer.cs">
+      <DependentUpon>FrmVerReservasAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,11 +174,23 @@
     <EmbeddedResource Include="FrmGestionInstrumentos.resx">
       <DependentUpon>FrmGestionInstrumentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorariosMasFrecuentados.resx">
+      <DependentUpon>FrmHorariosMasFrecuentados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorariosYSalas.resx">
+      <DependentUpon>FrmHorariosYSalas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoCliente.resx">
       <DependentUpon>FrmListadoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportePorGenero.resx">
       <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReservasCliente.resx">
+      <DependentUpon>FrmReservasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerReservasAdministrador.resx">
+      <DependentUpon>FrmVerReservasAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

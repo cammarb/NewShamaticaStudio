@@ -22,5 +22,17 @@ namespace CapaReservas
         {
             return objDataReserva.IDExiste(objreserva);
         }
+        public List<Reserva> ListarReserva()
+        {
+            return objDataReserva.ListarReserva();
+        }
+        public List<Reserva> ListarReservaPorCliente(Cliente objcliente)
+        {
+            return objDataReserva.ListarReservaPorCliente(objcliente);
+        }
+        public List<Reserva> ListarReservaPorFecha(DateTime value)
+        {
+            return objDataReserva.ListarReservaPorFecha(value);
+        }
     }
 }

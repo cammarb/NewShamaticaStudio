@@ -17,7 +17,7 @@ namespace CapaDatos
                 return "Se registro exitosamente";
             }
         }
-        public List<Sala> Listarsalasregistrados()
+        public List<Sala> Listaralasregistrados()
         {
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
             return contexto.Salas.ToList<Sala>();
@@ -29,13 +29,13 @@ namespace CapaDatos
             {
                 var modifi = contexto.Salas.Find(objsala.cod_sala);
                 modifi.cod_sala = objsala.cod_sala;
-                modifi.num_sala = objsala.num_sala;
+                modifi.nom_sala = objsala.nom_sala;
                 contexto.SaveChanges();
                 return "La sala se modifico exitosamente";
             }
         }
 
-        public string EliminarSala(string codisala)
+        public string EliminarSala(int codisala)
         {
             using (var contexto = new ShamaticaStudioEntities())
             {

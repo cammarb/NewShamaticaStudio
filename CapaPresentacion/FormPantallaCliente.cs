@@ -32,9 +32,15 @@ namespace CapaPresentacion
             mgraphics.DrawRectangle(pen, area);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRealizarReserva_Click(object sender, EventArgs e)
         {
             FormRegistrarReserva frm = new FormRegistrarReserva(objCliente);
+            frm.ShowDialog();
+        }
+
+        private void btnVerReservas_Click(object sender, EventArgs e)
+        {
+            FrmReservasCliente frm = new FrmReservasCliente(objCliente);
             frm.ShowDialog();
         }
     }

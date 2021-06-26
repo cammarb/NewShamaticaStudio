@@ -36,11 +36,11 @@ namespace CapaPresentacion
                 objUsuario.password = txtContraIngresoAdmin.Text.Trim();
                 var kel = objIngresarUsuario.Login(objUsuario);
 
-                if( kel == null )
+                if( kel == null || (kel!=null && kel.rol.Equals("client")))
                 {
                     MessageBox.Show("Datos ingresados incorrectos, por favor ingrese un login valido");
                 }
-                else
+                else 
                 {
                     userLogin = kel.login;
                     userRol = kel.rol;

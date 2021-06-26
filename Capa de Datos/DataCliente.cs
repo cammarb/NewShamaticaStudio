@@ -187,6 +187,13 @@ namespace CapaDatos
             }
             return objNum;
         }
+        public double PromedioDeEdadesDeClientes()
+        {
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var outcome = Convert.ToDouble((from clientes in contexto.Clientes
+                                            select clientes.cli_edad).ToList().Average());
+            return outcome;
+        }
 
     }
 }

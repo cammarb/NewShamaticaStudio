@@ -27,6 +27,7 @@ namespace CapaPresentacion
 
         private void FrmListadoCliente_Load(object sender, EventArgs e)
         {
+            lblPromedio.Text = "Promedio de edades genera;es: " + objOpCliente.PromedioGeneralDeEdadesDeCliente();
             DataGridViewDefault();
             LimpiarDataGridView();
         }
@@ -54,11 +55,11 @@ namespace CapaPresentacion
                 }
                 if (cbxFiltrado.Text.Equals("Edad"))
                 {
-                    dgClientes.DataSource = objOpCliente.ListarClientePorEdad(Convert.ToInt32(tbxMiscelaneo.Text)); LimpiarDataGridView();
                     if (tbxMiscelaneo.Text.Equals(""))
                     {
                         tbxMiscelaneo.Text = "0";
                     }
+                    dgClientes.DataSource = objOpCliente.ListarClientePorEdad(Convert.ToInt32(tbxMiscelaneo.Text)); LimpiarDataGridView();
                 }
                 if (cbxFiltrado.Text.Equals("Distrito"))
                 {
@@ -83,6 +84,7 @@ namespace CapaPresentacion
             }
             else
             {
+               
                 MessageBox.Show("Porfavor seleccion una metodo de filtrado");
                 DataGridViewDefault();
                 LimpiarDataGridView();

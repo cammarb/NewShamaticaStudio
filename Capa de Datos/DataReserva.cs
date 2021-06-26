@@ -24,10 +24,10 @@ namespace CapaDatos
             using (var contexto = new ShamaticaStudioEntities())
             {
                 var result = (from  reservation in contexto.Reservas
-                              where reservation.id_reserva == objreserva.id_reserva ||(
+                              where
                                reservation.codigo2_sala   == objreserva.codigo2_sala
                               && reservation.fecha_reserva == objreserva.fecha_reserva
-                              && reservation.codigo_horario == objreserva.codigo_horario)                      
+                              && reservation.codigo_horario == objreserva.codigo_horario                    
                               select reservation).SingleOrDefault();
                 return result;
             }
@@ -43,20 +43,31 @@ namespace CapaDatos
                 return result;
             }
         }
-       /* public Reserva IDRandom(Reserva objreserva)
-        {
-            using (var contexto = new ShamaticaStudioEntities())
-            {
-                var newID = rnd.Next(100000, 999999);
-                objreserva.id_reserva = newID  ;
-                return newID;
-            }
-        }
-       */
-        public List<Reserva> Listarreservasregistrados()
+       
+        public List<Reserva> ListarReserva()
         {
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
             return contexto.Reservas.ToList<Reserva>();
+        }
+        public List<Reserva> ListarReservaPorCliente(Cliente objcliente)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var lista = (from reservas in contexto.Reservas
+                             where reservas.cliente_dni == objcliente.cli_dni
+                             select reservas).ToList();
+                return lista;
+            }
+        }
+        public List<Reserva> ListarReservaPorFecha(DateTime fecha)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var listado = (from reservas in contexto.Reservas
+                               where reservas.fecha_reserva == fecha
+                               select reservas).ToList();
+                return listado;
+            }
         }
     }
 }
