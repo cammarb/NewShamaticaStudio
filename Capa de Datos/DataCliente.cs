@@ -195,5 +195,26 @@ namespace CapaDatos
             return outcome;
         }
 
+        public List<EntityClienteQueMasReserva> ClientesQueMasFrecuentan(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<EntityClienteQueMasReserva> objNum = new List<EntityClienteQueMasReserva>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+
+            var client = from reserva in contexto.Reservas
+                         join cliente in contexto.Clientes on reserva.cliente_dni equals cliente.cli_dni
+                         where reserva.fecha_reserva >= fechaInicio && reserva.fecha_reserva <= fechaFin
+                         group reserva by cliente.cli_dni into NuevoGrupo
+                         select NuevoGrupo;
+            foreach (var abcde in client)
+            {
+                EntityClienteQueMasReserva obj = new EntityClienteQueMasReserva();
+                obj.dni = abcde.Key;
+                obj.name = BuscarCliente(obj.dni).cli_nombre;
+                obj.correo = BuscarCliente(obj.dni).cli_correo;
+                obj.cantidadDeReservasCliente = abcde.Count();
+                objNum.Add(obj);
+            }
+            return objNum;
+        }
     }
 }

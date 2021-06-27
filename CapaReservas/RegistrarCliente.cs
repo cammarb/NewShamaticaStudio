@@ -76,5 +76,10 @@ namespace CapaReservas
         {
             return objDataCliente.PromedioDeEdadesDeClientes();
         }
+
+        public List<EntityClienteQueMasReserva> ListadoDeClientesQueMasReservan(DateTime dateini, DateTime datefin)
+        {
+            return objDataCliente.ClientesQueMasFrecuentan(dateini, datefin);
+        }
     }
 }
