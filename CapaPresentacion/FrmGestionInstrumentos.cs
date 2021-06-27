@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaReservas;
+using System.Drawing.Drawing2D;
 
 namespace CapaPresentacion
 {
@@ -20,7 +21,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        void ActualizarDataGrid()
+        private void ActualizarDataGrid()
         {
             dgInstrumentos.DataSource = objOpInstrumento.ListarInstrumentos();
             dgInstrumentos.Columns["id_instrumento"].Visible = false;
@@ -31,6 +32,13 @@ namespace CapaPresentacion
             tbxNombre.Text = "";
             tbxCosto.Text = "";
             tbxNombre.Focus();
+
+            lblInventarioTotal.Text = "Inventario total: S/." + objOpInstrumento.CalcularInventario();
+        }
+
+        private void CalcularInventario()
+        {
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -40,7 +48,6 @@ namespace CapaPresentacion
                 Instrumento objInstrumento = new Instrumento();
                 objInstrumento.nombre_instrumento = tbxNombre.Text;
                 objInstrumento.costo_instrumento = Convert.ToInt32(tbxCosto.Text);
-                objInstrumento.disponibilidad_instrumento = true;
                 MessageBox.Show(objOpInstrumento.RegistarInstrumento(objInstrumento));
             }
             else
@@ -94,7 +101,6 @@ namespace CapaPresentacion
             else
             {
                 dgInstrumentos.DataSource = listado.OrderByDescending(_ => _.GetType().GetProperty(NombreColumSelec).GetValue(_)).ToList();
-
             }
             sortAscending = !sortAscending;
         }
@@ -102,6 +108,23 @@ namespace CapaPresentacion
         private void dgInstrumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        // Pintar background con degradado
+        private void FormRegistrarCliente_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics mgraphics = e.Graphics;
+            Pen pen = new Pen(Color.FromArgb(92, 37, 141), 1);
+
+            Rectangle area = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
+            LinearGradientBrush lgb = new LinearGradientBrush(area, Color.FromArgb(92, 37, 141), Color.FromArgb(67, 137, 162), LinearGradientMode.Vertical);
+            mgraphics.FillRectangle(lgb, area);
+            mgraphics.DrawRectangle(pen, area);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -45,7 +45,9 @@ namespace CapaPresentacion
                     userLogin = kel.login;
                     userRol = kel.rol;
 
+                    this.Hide();
                     FormPantallaAdministrador frm = new FormPantallaAdministrador();
+                    frm.Closed += (s, args) => this.Close();
                     frm.ShowDialog();
                 }
             }

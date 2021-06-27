@@ -57,6 +57,7 @@ namespace CapaPresentacion
             }
         }
 
+        // Pintar background con degradado
         private void FormRegistrarCliente_Paint(object sender, PaintEventArgs e)
         {
             Graphics mgraphics = e.Graphics;

@@ -37,29 +37,32 @@ namespace CapaPresentacion
             // dgReservasClientes
             // 
             this.dgReservasClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReservasClientes.Location = new System.Drawing.Point(193, 125);
+            this.dgReservasClientes.Location = new System.Drawing.Point(37, 111);
+            this.dgReservasClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgReservasClientes.Name = "dgReservasClientes";
             this.dgReservasClientes.RowHeadersWidth = 51;
             this.dgReservasClientes.RowTemplate.Height = 24;
-            this.dgReservasClientes.Size = new System.Drawing.Size(371, 226);
+            this.dgReservasClientes.Size = new System.Drawing.Size(734, 376);
             this.dgReservasClientes.TabIndex = 0;
             // 
             // btnDetalle
             // 
             this.btnDetalle.AutoSize = true;
-            this.btnDetalle.Location = new System.Drawing.Point(236, 51);
+            this.btnDetalle.Location = new System.Drawing.Point(34, 50);
+            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(148, 17);
+            this.btnDetalle.Size = new System.Drawing.Size(111, 13);
             this.btnDetalle.TabIndex = 1;
             this.btnDetalle.Text = "Reservas Registradas";
             // 
             // FrmReservasCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(824, 527);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dgReservasClientes);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmReservasCliente";
             this.Text = "FrmReservasCliente";
             this.Load += new System.EventHandler(this.FrmReservasCliente_Load);
