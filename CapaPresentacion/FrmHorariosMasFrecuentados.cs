@@ -22,18 +22,22 @@ namespace CapaPresentacion
 
         private void FrmHorariosMasFrecuentados_Load(object sender, EventArgs e)
         {
-            //lblEspecificacion.Text = "Grafico de clientes registrado por Distrito";
-            chartHorarioFrecuentado.DataSource = objOpHorario.HorarioMasReservado();
+            
+        }
+
+        private void btnMostrarHorarios_Click(object sender, EventArgs e)
+        {
+            chartHorarioFrecuentado.DataSource = objOpHorario.HorarioMasReservado(DatePickerInicio.Value.Date, DatePîckerFin.Value.Date);
             chartHorarioFrecuentado.Series["Serie"].XValueMember = "horario";
 
             chartHorarioFrecuentado.Series["Serie"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
 
-            chartHorarioFrecuentado.Series["Serie"].YValueMembers= "cantidadhorariosrepetidos";
+            chartHorarioFrecuentado.Series["Serie"].YValueMembers = "cantidadhorariosrepetidos";
+            chartHorarioFrecuentado.Series["Serie"].IsValueShownAsLabel = true;
 
             chartHorarioFrecuentado.Series["Serie"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
 
             chartHorarioFrecuentado.DataBind();
         }
-
     }
 }
