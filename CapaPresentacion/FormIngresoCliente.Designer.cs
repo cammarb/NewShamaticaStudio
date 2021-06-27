@@ -105,6 +105,7 @@ namespace CapaPresentacion
             this.txtContraLoginCliente.Name = "txtContraLoginCliente";
             this.txtContraLoginCliente.Size = new System.Drawing.Size(166, 20);
             this.txtContraLoginCliente.TabIndex = 40;
+            this.txtContraLoginCliente.UseSystemPasswordChar = true;
             // 
             // btnIngresarCliente
             // 

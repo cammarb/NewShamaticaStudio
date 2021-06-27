@@ -55,17 +55,17 @@ namespace CapaPresentacion
             // 
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.Location = new System.Drawing.Point(350, 88);
-            this.dgClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 24;
-            this.dgClientes.Size = new System.Drawing.Size(511, 314);
+            this.dgClientes.Size = new System.Drawing.Size(574, 314);
             this.dgClientes.TabIndex = 0;
             // 
             // txtBandaCliente
             // 
             this.txtBandaCliente.Location = new System.Drawing.Point(204, 219);
-            this.txtBandaCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBandaCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtBandaCliente.Name = "txtBandaCliente";
             this.txtBandaCliente.Size = new System.Drawing.Size(115, 20);
             this.txtBandaCliente.TabIndex = 69;
@@ -101,7 +101,7 @@ namespace CapaPresentacion
             "Pueblo Libre",
             "Rimac"});
             this.cboDistritoCliente.Location = new System.Drawing.Point(29, 274);
-            this.cboDistritoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboDistritoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.cboDistritoCliente.Name = "cboDistritoCliente";
             this.cboDistritoCliente.Size = new System.Drawing.Size(123, 21);
             this.cboDistritoCliente.TabIndex = 67;
@@ -119,7 +119,7 @@ namespace CapaPresentacion
             "UTEC",
             "VILLAREAL"});
             this.cboUNICliente.Location = new System.Drawing.Point(204, 111);
-            this.cboUNICliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboUNICliente.Margin = new System.Windows.Forms.Padding(2);
             this.cboUNICliente.Name = "cboUNICliente";
             this.cboUNICliente.Size = new System.Drawing.Size(117, 21);
             this.cboUNICliente.TabIndex = 66;
@@ -132,7 +132,7 @@ namespace CapaPresentacion
             "Mujer",
             "No Binario"});
             this.cboSexoCliente.Location = new System.Drawing.Point(204, 163);
-            this.cboSexoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboSexoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.cboSexoCliente.Name = "cboSexoCliente";
             this.cboSexoCliente.Size = new System.Drawing.Size(117, 21);
             this.cboSexoCliente.TabIndex = 65;
@@ -140,7 +140,7 @@ namespace CapaPresentacion
             // txtCorreoCliente
             // 
             this.txtCorreoCliente.Location = new System.Drawing.Point(29, 219);
-            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreoCliente.Name = "txtCorreoCliente";
             this.txtCorreoCliente.Size = new System.Drawing.Size(123, 20);
             this.txtCorreoCliente.TabIndex = 64;
@@ -148,7 +148,7 @@ namespace CapaPresentacion
             // txtEdadCliente
             // 
             this.txtEdadCliente.Location = new System.Drawing.Point(29, 163);
-            this.txtEdadCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdadCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdadCliente.Name = "txtEdadCliente";
             this.txtEdadCliente.Size = new System.Drawing.Size(123, 20);
             this.txtEdadCliente.TabIndex = 63;
@@ -156,7 +156,7 @@ namespace CapaPresentacion
             // txtNombreCliente
             // 
             this.txtNombreCliente.Location = new System.Drawing.Point(29, 108);
-            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(123, 20);
             this.txtNombreCliente.TabIndex = 62;
@@ -247,7 +247,7 @@ namespace CapaPresentacion
             this.btnModificar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(72, 359);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(90, 43);
             this.btnModificar.TabIndex = 73;
@@ -257,13 +257,14 @@ namespace CapaPresentacion
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(200, 359);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(90, 43);
             this.btnEliminar.TabIndex = 74;
@@ -274,6 +275,7 @@ namespace CapaPresentacion
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(23, 28);
@@ -284,23 +286,25 @@ namespace CapaPresentacion
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.Gray;
+            this.btnVolver.BackColor = System.Drawing.Color.LightGreen;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(737, 437);
+            this.btnVolver.Location = new System.Drawing.Point(800, 427);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(124, 53);
             this.btnVolver.TabIndex = 75;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FrmGestionarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 518);
+            this.ClientSize = new System.Drawing.Size(955, 508);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
@@ -320,10 +324,11 @@ namespace CapaPresentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGestionarCliente";
             this.Text = "Gestionar Usuario";
             this.Load += new System.EventHandler(this.FrmGestionarCliente_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmGestionarCliente_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

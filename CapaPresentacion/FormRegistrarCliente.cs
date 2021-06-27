@@ -49,13 +49,11 @@ namespace CapaPresentacion
             var res = objRegistrarCliente.ClienteExistente(objcliente);
            // var res2 = objGuardarUsuario.RegistrarUsuario(objUsuario);
 
-            MessageBox.Show("Hola");
             if ( res == null)
             {
-                MessageBox.Show("Hola2");
                 MessageBox.Show(objRegistrarCliente.RegistrarClient(objcliente));
                 objGuardarUsuario.RegistrarUsuario(objUsuario);
-                enviarCorreo(objcliente);
+                //enviarCorreo(objcliente);
             }
             else
             {

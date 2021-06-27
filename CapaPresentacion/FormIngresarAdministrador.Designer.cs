@@ -69,7 +69,7 @@ namespace CapaPresentacion
             // txtDNIIngresoAdmin
             // 
             this.txtDNIIngresoAdmin.Location = new System.Drawing.Point(211, 138);
-            this.txtDNIIngresoAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDNIIngresoAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtDNIIngresoAdmin.Name = "txtDNIIngresoAdmin";
             this.txtDNIIngresoAdmin.Size = new System.Drawing.Size(180, 20);
             this.txtDNIIngresoAdmin.TabIndex = 40;
@@ -90,10 +90,11 @@ namespace CapaPresentacion
             // txtContraIngresoAdmin
             // 
             this.txtContraIngresoAdmin.Location = new System.Drawing.Point(211, 219);
-            this.txtContraIngresoAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContraIngresoAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraIngresoAdmin.Name = "txtContraIngresoAdmin";
             this.txtContraIngresoAdmin.Size = new System.Drawing.Size(180, 20);
             this.txtContraIngresoAdmin.TabIndex = 42;
+            this.txtContraIngresoAdmin.UseSystemPasswordChar = true;
             // 
             // btnIngresarAdmin
             // 
@@ -103,7 +104,7 @@ namespace CapaPresentacion
             this.btnIngresarAdmin.Font = new System.Drawing.Font("Bahnschrift", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarAdmin.ForeColor = System.Drawing.Color.White;
             this.btnIngresarAdmin.Location = new System.Drawing.Point(211, 267);
-            this.btnIngresarAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresarAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresarAdmin.Name = "btnIngresarAdmin";
             this.btnIngresarAdmin.Size = new System.Drawing.Size(180, 51);
             this.btnIngresarAdmin.TabIndex = 54;
@@ -115,7 +116,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 103);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +136,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.txtDNIIngresoAdmin);
             this.Controls.Add(this.lblDni);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormIngresarAdministrador";
             this.Text = "FormIngresarAdministrador";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormIngresarAdministrador_Paint);

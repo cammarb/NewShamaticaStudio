@@ -54,16 +54,19 @@ namespace CapaPresentacion
             // lblCosto
             // 
             this.lblCosto.AutoSize = true;
+            this.lblCosto.BackColor = System.Drawing.Color.Transparent;
+            this.lblCosto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCosto.ForeColor = System.Drawing.Color.White;
             this.lblCosto.Location = new System.Drawing.Point(33, 180);
             this.lblCosto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(34, 13);
+            this.lblCosto.Size = new System.Drawing.Size(50, 19);
             this.lblCosto.TabIndex = 26;
             this.lblCosto.Text = "Costo";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,10 +103,10 @@ namespace CapaPresentacion
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(36, 227);
+            this.btnRegistrar.Location = new System.Drawing.Point(27, 227);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(82, 34);
+            this.btnRegistrar.Size = new System.Drawing.Size(91, 34);
             this.btnRegistrar.TabIndex = 23;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -138,16 +141,19 @@ namespace CapaPresentacion
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(33, 144);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(68, 19);
             this.lblNombre.TabIndex = 20;
             this.lblNombre.Text = "Nombre";
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.Gray;
+            this.btnVolver.BackColor = System.Drawing.Color.PaleGreen;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +193,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(750, 437);
+            this.ClientSize = new System.Drawing.Size(750, 433);
             this.Controls.Add(this.lblInventarioTotal);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnVolver);
