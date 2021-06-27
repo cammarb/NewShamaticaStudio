@@ -35,5 +35,27 @@ namespace CapaPresentacion
         {
             ActualizarDataGridView();
         }
+
+        private void dgReservasClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgReservasClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow filaSeleccionada = dgReservasClientes.Rows[e.RowIndex];
+                int id = Convert.ToInt32(dgReservasClientes.SelectedRows[0].Cells[0].Value);
+                FrmDetalleReserva frm = new FrmDetalleReserva(id);
+                frm.ShowDialog();
+            }
+            
+        }
+
+        private void False(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,10 +34,10 @@
           </Key>
           <Property Name="id_controlador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha_controlador" Type="date" />
-          <Property Name="hora_inicial" Type="varchar" MaxLength="50" />
-          <Property Name="hora_final" Type="varchar" MaxLength="50" />
-          <Property Name="estado" Type="varchar" MaxLength="50" />
-          <Property Name="identificador_intrumento" Type="int" />
+          <Property Name="horainicial_controlador" Type="varchar" MaxLength="50" />
+          <Property Name="horafinal_controlador" Type="varchar" MaxLength="50" />
+          <Property Name="estado_controlador" Type="varchar" MaxLength="50" />
+          <Property Name="identficiador_instrumento" Type="int" />
         </EntityType>
         <EntityType Name="DetalleReserva">
           <Key>
@@ -48,6 +48,7 @@
           <Property Name="nombre_cliente" Type="varchar" MaxLength="50" />
           <Property Name="horario_reserva" Type="varchar" MaxLength="50" />
           <Property Name="nom_sala" Type="varchar" MaxLength="50" />
+          <Property Name="reinstrumento_codigo" Type="int" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
@@ -117,14 +118,14 @@
         <EntityContainer Name="ShamaticaStudioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Administradores" EntityType="ShamaticaStudioModel.Administrador" />
           <EntitySet Name="Clientes" EntityType="ShamaticaStudioModel.Cliente" />
-          <EntitySet Name="ControladoraInstrumentos" EntityType="ShamaticaStudioModel.ControladoraInstrumento" />
           <EntitySet Name="DetalleReservas" EntityType="ShamaticaStudioModel.DetalleReserva" />
           <EntitySet Name="Horarios" EntityType="ShamaticaStudioModel.Horario" />
-          <EntitySet Name="Instrumentos" EntityType="ShamaticaStudioModel.Instrumento" />
           <EntitySet Name="Reservas" EntityType="ShamaticaStudioModel.Reserva" />
-          <EntitySet Name="Salas" EntityType="ShamaticaStudioModel.Sala" />
-          <EntitySet Name="Usuarios" EntityType="ShamaticaStudioModel.Usuario" />
           <EntitySet Name="ReservasInstrumentos" EntityType="ShamaticaStudioModel.ReservaInstrumento" />
+          <EntitySet Name="Usuarios" EntityType="ShamaticaStudioModel.Usuario" />
+          <EntitySet Name="ControladoraInstrumentos" EntityType="ShamaticaStudioModel.ControladoraInstrumento" />
+          <EntitySet Name="Instrumentos" EntityType="ShamaticaStudioModel.Instrumento" />
+          <EntitySet Name="Salas" EntityType="ShamaticaStudioModel.Sala" />
         </EntityContainer>
         <EntityType Name="Administrador">
           <Key>
@@ -149,17 +150,6 @@
           <Property Name="cli_banda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cli_ultimareserva" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="ControladoraInstrumento">
-          <Key>
-            <PropertyRef Name="id_controlador" />
-          </Key>
-          <Property Name="id_controlador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_controlador" Type="DateTime" Precision="0" />
-          <Property Name="hora_inicial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="hora_final" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="identificador_intrumento" Type="Int32" />
-        </EntityType>
         <EntityType Name="DetalleReserva">
           <Key>
             <PropertyRef Name="id_detalle" />
@@ -169,6 +159,7 @@
           <Property Name="nombre_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="horario_reserva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nom_sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="reinstrumento_codigo" Type="Int32" />
         </EntityType>
         <EntityType Name="Horario">
           <Key>
@@ -176,14 +167,6 @@
           </Key>
           <Property Name="id_horario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="hora_reserva" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Instrumento">
-          <Key>
-            <PropertyRef Name="id_instrumento" />
-          </Key>
-          <Property Name="id_instrumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_instrumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="costo_instrumento" Type="Int32" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
@@ -195,12 +178,13 @@
           <Property Name="codigo2_sala" Type="Int32" />
           <Property Name="fecha_reserva" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="Sala">
+        <EntityType Name="ReservaInstrumento">
           <Key>
-            <PropertyRef Name="cod_sala" />
+            <PropertyRef Name="id_reservainstrumento" />
           </Key>
-          <Property Name="cod_sala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom_sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_reservainstrumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_reservarel" Type="Int32" />
+          <Property Name="id_instrumento" Type="Int32" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -211,13 +195,31 @@
           <Property Name="status" Type="Boolean" />
           <Property Name="rol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="ReservaInstrumento">
+        <EntityType Name="ControladoraInstrumento">
           <Key>
-            <PropertyRef Name="id_reservainstrumento" />
+            <PropertyRef Name="id_controlador" />
           </Key>
-          <Property Name="id_reservainstrumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_reservarel" Type="Int32" />
-          <Property Name="id_instrumento" Type="Int32" />
+          <Property Name="id_controlador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_controlador" Type="DateTime" Precision="0" />
+          <Property Name="horainicial_controlador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="horafinal_controlador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado_controlador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="identficiador_instrumento" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Instrumento">
+          <Key>
+            <PropertyRef Name="id_instrumento" />
+          </Key>
+          <Property Name="id_instrumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_instrumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="costo_instrumento" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="cod_sala" />
+          </Key>
+          <Property Name="cod_sala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom_sala" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -250,21 +252,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ControladoraInstrumentos">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.ControladoraInstrumento">
-              <MappingFragment StoreEntitySet="ControladoraInstrumento">
-                <ScalarProperty Name="identificador_intrumento" ColumnName="identificador_intrumento" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="hora_final" ColumnName="hora_final" />
-                <ScalarProperty Name="hora_inicial" ColumnName="hora_inicial" />
-                <ScalarProperty Name="fecha_controlador" ColumnName="fecha_controlador" />
-                <ScalarProperty Name="id_controlador" ColumnName="id_controlador" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DetalleReservas">
             <EntityTypeMapping TypeName="ShamaticaStudioModel.DetalleReserva">
               <MappingFragment StoreEntitySet="DetalleReserva">
+                <ScalarProperty Name="reinstrumento_codigo" ColumnName="reinstrumento_codigo" />
                 <ScalarProperty Name="nom_sala" ColumnName="nom_sala" />
                 <ScalarProperty Name="horario_reserva" ColumnName="horario_reserva" />
                 <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
@@ -281,15 +272,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Instrumentos">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.Instrumento">
-              <MappingFragment StoreEntitySet="Instrumento">
-                <ScalarProperty Name="costo_instrumento" ColumnName="costo_instrumento" />
-                <ScalarProperty Name="nombre_instrumento" ColumnName="nombre_instrumento" />
-                <ScalarProperty Name="id_instrumento" ColumnName="id_instrumento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Reservas">
             <EntityTypeMapping TypeName="ShamaticaStudioModel.Reserva">
               <MappingFragment StoreEntitySet="Reserva">
@@ -301,11 +283,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Salas">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.Sala">
-              <MappingFragment StoreEntitySet="Sala">
-                <ScalarProperty Name="nom_sala" ColumnName="nom_sala" />
-                <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
+          <EntitySetMapping Name="ReservasInstrumentos">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.ReservaInstrumento">
+              <MappingFragment StoreEntitySet="ReservaInstrumento">
+                <ScalarProperty Name="id_instrumento" ColumnName="id_instrumento" />
+                <ScalarProperty Name="id_reservarel" ColumnName="id_reservarel" />
+                <ScalarProperty Name="id_reservainstrumento" ColumnName="id_reservainstrumento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -319,12 +302,32 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ReservasInstrumentos">
-            <EntityTypeMapping TypeName="ShamaticaStudioModel.ReservaInstrumento">
-              <MappingFragment StoreEntitySet="ReservaInstrumento">
+          <EntitySetMapping Name="ControladoraInstrumentos">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.ControladoraInstrumento">
+              <MappingFragment StoreEntitySet="ControladoraInstrumento">
+                <ScalarProperty Name="identficiador_instrumento" ColumnName="identficiador_instrumento" />
+                <ScalarProperty Name="estado_controlador" ColumnName="estado_controlador" />
+                <ScalarProperty Name="horafinal_controlador" ColumnName="horafinal_controlador" />
+                <ScalarProperty Name="horainicial_controlador" ColumnName="horainicial_controlador" />
+                <ScalarProperty Name="fecha_controlador" ColumnName="fecha_controlador" />
+                <ScalarProperty Name="id_controlador" ColumnName="id_controlador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instrumentos">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Instrumento">
+              <MappingFragment StoreEntitySet="Instrumento">
+                <ScalarProperty Name="costo_instrumento" ColumnName="costo_instrumento" />
+                <ScalarProperty Name="nombre_instrumento" ColumnName="nombre_instrumento" />
                 <ScalarProperty Name="id_instrumento" ColumnName="id_instrumento" />
-                <ScalarProperty Name="id_reservarel" ColumnName="id_reservarel" />
-                <ScalarProperty Name="id_reservainstrumento" ColumnName="id_reservainstrumento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salas">
+            <EntityTypeMapping TypeName="ShamaticaStudioModel.Sala">
+              <MappingFragment StoreEntitySet="Sala">
+                <ScalarProperty Name="nom_sala" ColumnName="nom_sala" />
+                <ScalarProperty Name="cod_sala" ColumnName="cod_sala" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -36,33 +36,40 @@ namespace CapaPresentacion
             // 
             // dgReservasClientes
             // 
+            this.dgReservasClientes.AllowUserToAddRows = false;
+            this.dgReservasClientes.AllowUserToDeleteRows = false;
+            this.dgReservasClientes.AllowUserToResizeColumns = false;
+            this.dgReservasClientes.AllowUserToResizeRows = false;
             this.dgReservasClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReservasClientes.Location = new System.Drawing.Point(37, 111);
-            this.dgReservasClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgReservasClientes.Location = new System.Drawing.Point(49, 137);
+            this.dgReservasClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgReservasClientes.MultiSelect = false;
             this.dgReservasClientes.Name = "dgReservasClientes";
             this.dgReservasClientes.RowHeadersWidth = 51;
             this.dgReservasClientes.RowTemplate.Height = 24;
-            this.dgReservasClientes.Size = new System.Drawing.Size(734, 376);
+            this.dgReservasClientes.Size = new System.Drawing.Size(979, 463);
             this.dgReservasClientes.TabIndex = 0;
+            this.dgReservasClientes.AllowUserToAddRowsChanged += new System.EventHandler(this.False);
+            this.dgReservasClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReservasClientes_CellClick);
+            this.dgReservasClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReservasClientes_CellContentClick);
             // 
             // btnDetalle
             // 
             this.btnDetalle.AutoSize = true;
-            this.btnDetalle.Location = new System.Drawing.Point(34, 50);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnDetalle.Location = new System.Drawing.Point(45, 62);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(111, 13);
+            this.btnDetalle.Size = new System.Drawing.Size(148, 17);
             this.btnDetalle.TabIndex = 1;
             this.btnDetalle.Text = "Reservas Registradas";
             // 
             // FrmReservasCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 527);
+            this.ClientSize = new System.Drawing.Size(1099, 649);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dgReservasClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmReservasCliente";
             this.Text = "FrmReservasCliente";
             this.Load += new System.EventHandler(this.FrmReservasCliente_Load);
