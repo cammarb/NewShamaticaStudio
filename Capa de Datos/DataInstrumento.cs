@@ -46,19 +46,13 @@ namespace CapaDatos
 
             }
         }
-       /* public bool DisponibilidadInstrumento(int codinstrumento, DateTime fechareserva, string horareserva)
+        public int CalcularInventarioInstrumentos()
         {
-            using (var contexto = new ShamaticaStudioEntities())
-            {
-                var disponibilidad = contexto.Instrumentos.Find(codinstrumento);
-                modifi.costo_instrumento = objInstrumento.costo_instrumento;
-                modifi.nombre_instrumento = objInstrumento.nombre_instrumento;
-                contexto.SaveChanges();
-                return "El instrumento se modifico exitosamente";
-
-            }
-
-        }*/
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var outcome = Convert.ToInt32((from instrumento in contexto.Instrumentos
+                           select instrumento.costo_instrumento).ToList().Sum());
+            return outcome;
+        }
         
     }
 }

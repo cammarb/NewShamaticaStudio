@@ -27,5 +27,10 @@ namespace CapaReservas
         {
             return objInstrumento.ListarInstrumentos();
         }
+
+        public int CalcularInventario()
+        {
+            return objInstrumento.CalcularInventarioInstrumentos();
+        }
     }
 }
