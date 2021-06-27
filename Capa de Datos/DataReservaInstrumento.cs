@@ -28,5 +28,22 @@ namespace CapaDatos
                 contexto.SaveChanges();
             }
         }
+        public List<EntityInstrumentoReservado> MostrarInstrumentosReservados(int id)
+        {
+            List<EntityInstrumentoReservado> lista = new List<EntityInstrumentoReservado>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var random = from reserva in contexto.Reservas
+                         join reinstrumento in contexto.ReservasInstrumentos on reserva.id_reserva equals id
+                         group reinstrumento by reinstrumento.id_instrumento into NuevoGrupo
+                         select NuevoGrupo;
+            foreach (var instrumento in contexto.Instrumentos)
+            {
+                EntityInstrumentoReservado obj = new EntityInstrumentoReservado();
+                obj.Codigo = instrumento.id_instrumento;
+                obj.Nombre = instrumento.nombre_instrumento;
+                lista.Add(obj);
+            }
+            return lista;
+        }
     }
 }

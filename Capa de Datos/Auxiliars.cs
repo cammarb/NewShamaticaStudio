@@ -42,6 +42,11 @@ namespace CapaDatos
         public string correo { get; set; }
         public int cantidadDeReservasCliente { get; set; }
     }
-
+    
+    public class EntityInstrumentoReservado
+    {
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+    }
 
 }
