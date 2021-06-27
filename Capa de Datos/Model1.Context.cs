@@ -29,10 +29,11 @@ namespace CapaDatos
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleReserva> DetalleReservas { get; set; }
         public virtual DbSet<Horario> Horarios { get; set; }
-        public virtual DbSet<Instrumento> Instrumentos { get; set; }
         public virtual DbSet<Reserva> Reservas { get; set; }
         public virtual DbSet<ReservaInstrumento> ReservasInstrumentos { get; set; }
-        public virtual DbSet<Sala> Salas { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<ControladoraInstrumento> ControladoraInstrumentos { get; set; }
+        public virtual DbSet<Instrumento> Instrumentos { get; set; }
+        public virtual DbSet<Sala> Salas { get; set; }
     }
 }
