@@ -97,6 +97,12 @@
     <Compile Include="FormRegistrarReserva.Designer.cs">
       <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClientesQueMasReservan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesQueMasReservan.Designer.cs">
+      <DependentUpon>FrmClientesQueMasReservan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarReserva.resx">
       <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesQueMasReservan.resx">
+      <DependentUpon>FrmClientesQueMasReservan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionarCliente.resx">
       <DependentUpon>FrmGestionarCliente.cs</DependentUpon>

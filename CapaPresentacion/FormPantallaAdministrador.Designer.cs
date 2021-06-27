@@ -40,7 +40,7 @@ namespace CapaPresentacion
             this.btnGestionarInstrumentos = new System.Windows.Forms.Button();
             this.btnReportePorGenero = new System.Windows.Forms.Button();
             this.btnHorarioMasReservado = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnClientesFrecuentes = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnSalasYHorarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,9 +52,10 @@ namespace CapaPresentacion
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(253, 53);
+            this.label1.Location = new System.Drawing.Point(190, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 48);
+            this.label1.Size = new System.Drawing.Size(353, 39);
             this.label1.TabIndex = 31;
             this.label1.Text = "Menu de administrador:";
             // 
@@ -64,9 +65,10 @@ namespace CapaPresentacion
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(255, 148);
+            this.label2.Location = new System.Drawing.Point(191, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 36);
+            this.label2.Size = new System.Drawing.Size(122, 29);
             this.label2.TabIndex = 33;
             this.label2.Text = "Ver/Editar";
             // 
@@ -76,19 +78,20 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(625, 148);
+            this.label3.Location = new System.Drawing.Point(469, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 36);
+            this.label3.Size = new System.Drawing.Size(111, 29);
             this.label3.TabIndex = 34;
             this.label3.Text = "Reportes";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 127);
+            this.pictureBox1.Size = new System.Drawing.Size(102, 103);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
@@ -100,10 +103,10 @@ namespace CapaPresentacion
             this.btnVerReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerReservas.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerReservas.ForeColor = System.Drawing.Color.White;
-            this.btnVerReservas.Location = new System.Drawing.Point(196, 206);
-            this.btnVerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerReservas.Location = new System.Drawing.Point(147, 167);
+            this.btnVerReservas.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerReservas.Name = "btnVerReservas";
-            this.btnVerReservas.Size = new System.Drawing.Size(268, 55);
+            this.btnVerReservas.Size = new System.Drawing.Size(201, 45);
             this.btnVerReservas.TabIndex = 57;
             this.btnVerReservas.Text = "Ver Reservas";
             this.btnVerReservas.UseVisualStyleBackColor = false;
@@ -117,10 +120,10 @@ namespace CapaPresentacion
             this.btnVerCliRegistrados.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerCliRegistrados.ForeColor = System.Drawing.Color.White;
             this.btnVerCliRegistrados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCliRegistrados.Location = new System.Drawing.Point(196, 276);
-            this.btnVerCliRegistrados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerCliRegistrados.Location = new System.Drawing.Point(147, 224);
+            this.btnVerCliRegistrados.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerCliRegistrados.Name = "btnVerCliRegistrados";
-            this.btnVerCliRegistrados.Size = new System.Drawing.Size(268, 55);
+            this.btnVerCliRegistrados.Size = new System.Drawing.Size(201, 45);
             this.btnVerCliRegistrados.TabIndex = 58;
             this.btnVerCliRegistrados.Text = "Ver Clientes Registrados";
             this.btnVerCliRegistrados.UseVisualStyleBackColor = false;
@@ -133,10 +136,10 @@ namespace CapaPresentacion
             this.btnGestionarClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarClientes.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarClientes.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarClientes.Location = new System.Drawing.Point(196, 356);
-            this.btnGestionarClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestionarClientes.Location = new System.Drawing.Point(147, 289);
+            this.btnGestionarClientes.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionarClientes.Name = "btnGestionarClientes";
-            this.btnGestionarClientes.Size = new System.Drawing.Size(268, 55);
+            this.btnGestionarClientes.Size = new System.Drawing.Size(201, 45);
             this.btnGestionarClientes.TabIndex = 59;
             this.btnGestionarClientes.Text = "Gestionar Clientes";
             this.btnGestionarClientes.UseVisualStyleBackColor = false;
@@ -149,10 +152,10 @@ namespace CapaPresentacion
             this.btnGestionarInstrumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarInstrumentos.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarInstrumentos.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarInstrumentos.Location = new System.Drawing.Point(196, 432);
-            this.btnGestionarInstrumentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestionarInstrumentos.Location = new System.Drawing.Point(147, 351);
+            this.btnGestionarInstrumentos.Margin = new System.Windows.Forms.Padding(2);
             this.btnGestionarInstrumentos.Name = "btnGestionarInstrumentos";
-            this.btnGestionarInstrumentos.Size = new System.Drawing.Size(268, 55);
+            this.btnGestionarInstrumentos.Size = new System.Drawing.Size(201, 45);
             this.btnGestionarInstrumentos.TabIndex = 60;
             this.btnGestionarInstrumentos.Text = "Gestionar Instrumentos";
             this.btnGestionarInstrumentos.UseVisualStyleBackColor = false;
@@ -164,12 +167,12 @@ namespace CapaPresentacion
             this.btnReportePorGenero.FlatAppearance.BorderSize = 0;
             this.btnReportePorGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportePorGenero.ForeColor = System.Drawing.Color.White;
-            this.btnReportePorGenero.Location = new System.Drawing.Point(601, 210);
-            this.btnReportePorGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReportePorGenero.Location = new System.Drawing.Point(451, 171);
+            this.btnReportePorGenero.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportePorGenero.Name = "btnReportePorGenero";
-            this.btnReportePorGenero.Size = new System.Drawing.Size(188, 46);
+            this.btnReportePorGenero.Size = new System.Drawing.Size(141, 37);
             this.btnReportePorGenero.TabIndex = 61;
-            this.btnReportePorGenero.Text = "Por genero";
+            this.btnReportePorGenero.Text = "Clientes";
             this.btnReportePorGenero.UseVisualStyleBackColor = false;
             this.btnReportePorGenero.Click += new System.EventHandler(this.btnReportePorGenero_Click);
             // 
@@ -179,28 +182,29 @@ namespace CapaPresentacion
             this.btnHorarioMasReservado.FlatAppearance.BorderSize = 0;
             this.btnHorarioMasReservado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHorarioMasReservado.ForeColor = System.Drawing.Color.White;
-            this.btnHorarioMasReservado.Location = new System.Drawing.Point(601, 286);
-            this.btnHorarioMasReservado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHorarioMasReservado.Location = new System.Drawing.Point(451, 232);
+            this.btnHorarioMasReservado.Margin = new System.Windows.Forms.Padding(2);
             this.btnHorarioMasReservado.Name = "btnHorarioMasReservado";
-            this.btnHorarioMasReservado.Size = new System.Drawing.Size(188, 46);
+            this.btnHorarioMasReservado.Size = new System.Drawing.Size(141, 37);
             this.btnHorarioMasReservado.TabIndex = 62;
-            this.btnHorarioMasReservado.Text = "Horario mas Reservado";
+            this.btnHorarioMasReservado.Text = "Horarios más reservados";
             this.btnHorarioMasReservado.UseVisualStyleBackColor = false;
             this.btnHorarioMasReservado.Click += new System.EventHandler(this.btnHorarioMasReservado_Click);
             // 
-            // button7
+            // btnClientesFrecuentes
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(601, 366);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(188, 46);
-            this.button7.TabIndex = 63;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnClientesFrecuentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClientesFrecuentes.FlatAppearance.BorderSize = 0;
+            this.btnClientesFrecuentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientesFrecuentes.ForeColor = System.Drawing.Color.White;
+            this.btnClientesFrecuentes.Location = new System.Drawing.Point(451, 297);
+            this.btnClientesFrecuentes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClientesFrecuentes.Name = "btnClientesFrecuentes";
+            this.btnClientesFrecuentes.Size = new System.Drawing.Size(141, 37);
+            this.btnClientesFrecuentes.TabIndex = 63;
+            this.btnClientesFrecuentes.Text = "Clientes más frecuentes";
+            this.btnClientesFrecuentes.UseVisualStyleBackColor = false;
+            this.btnClientesFrecuentes.Click += new System.EventHandler(this.btnClientesFrecuentes_Click);
             // 
             // button8
             // 
@@ -208,10 +212,10 @@ namespace CapaPresentacion
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(601, 442);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Location = new System.Drawing.Point(451, 359);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(188, 46);
+            this.button8.Size = new System.Drawing.Size(141, 37);
             this.button8.TabIndex = 64;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = false;
@@ -223,10 +227,10 @@ namespace CapaPresentacion
             this.btnSalasYHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalasYHorarios.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalasYHorarios.ForeColor = System.Drawing.Color.White;
-            this.btnSalasYHorarios.Location = new System.Drawing.Point(196, 514);
-            this.btnSalasYHorarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalasYHorarios.Location = new System.Drawing.Point(147, 418);
+            this.btnSalasYHorarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalasYHorarios.Name = "btnSalasYHorarios";
-            this.btnSalasYHorarios.Size = new System.Drawing.Size(268, 55);
+            this.btnSalasYHorarios.Size = new System.Drawing.Size(201, 45);
             this.btnSalasYHorarios.TabIndex = 65;
             this.btnSalasYHorarios.Text = "Salas y Horarios";
             this.btnSalasYHorarios.UseVisualStyleBackColor = false;
@@ -234,13 +238,13 @@ namespace CapaPresentacion
             // 
             // FormPantallaAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(963, 639);
+            this.ClientSize = new System.Drawing.Size(724, 575);
             this.Controls.Add(this.btnSalasYHorarios);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnClientesFrecuentes);
             this.Controls.Add(this.btnHorarioMasReservado);
             this.Controls.Add(this.btnReportePorGenero);
             this.Controls.Add(this.btnGestionarInstrumentos);
@@ -251,7 +255,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPantallaAdministrador";
             this.Text = "FormPantallaAdministrador";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormPantallaAdministrador_Paint);
@@ -273,7 +277,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnGestionarInstrumentos;
         private System.Windows.Forms.Button btnReportePorGenero;
         private System.Windows.Forms.Button btnHorarioMasReservado;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnClientesFrecuentes;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnSalasYHorarios;
     }

@@ -17,13 +17,11 @@ namespace CapaPresentacion
     public partial class FormRegistrarReserva : Form
     {
         Cliente objCliente;
-        //Sala objSala;
         Instrumento objInstrumento;
         OpHorario objOpHorario;
         OpSala objOpSala;
         OpInstrumento objOpInstrumento;
         DataReservaInstrumento objReservaInstruemento;
-        //Horario objHorario;
         Reserva objReserva;
       
         
@@ -32,8 +30,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             objCliente = objcliente;
-            //objSala = new Sala();
-            //objHorario = new Horario();
             objReserva = new Reserva();
             objOpHorario = new OpHorario();
             objOpSala = new OpSala();
@@ -48,7 +44,6 @@ namespace CapaPresentacion
             cboxHorario.DisplayMember = "hora_reserva";
             cboxHorario.ValueMember = "id_horario";//int
             //cboxHorario.BindingContext = this->BindingContext;
-
 
             cboxSala.DataSource = objOpSala.ListarSalas();
             cboxSala.DisplayMember = "nom_sala";
@@ -78,25 +73,23 @@ namespace CapaPresentacion
             objReserva.codigo_horario = (int)cboxHorario.SelectedValue;
             objReserva.codigo2_sala = (int)cboxSala.SelectedValue;
             objReserva.fecha_reserva = DateTimeFecha.Value.Date;
-            MessageBox.Show("ga");
+            objCliente.cli_ultimareserva = objReserva.fecha_reserva;
+            
             var res = objRegistrarReserva.ReservaExistente(objReserva);
 
             if (res == null )
             {
                 MessageBox.Show("hola");              
                 MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva)); 
-                
             }
             else
             {
                 MessageBox.Show("Por favor vuelva a intentarlo");
-              
             }
           
             foreach(Instrumento x in clbInstrumentos.CheckedItems)
             {
                 objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
-                x.disponibilidad_instrumento = false;
             }
 
 

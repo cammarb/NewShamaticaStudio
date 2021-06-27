@@ -20,7 +20,6 @@ namespace CapaPresentacion
         public static string userRol;
 
         DataCliente objDataCliente = new DataCliente();
-
         public FormIngresoCliente()
         {
             InitializeComponent();
@@ -45,13 +44,14 @@ namespace CapaPresentacion
                     userRol = kel.rol;
 
                     Cliente objcliente = objDataCliente.BuscarCliente(Convert.ToInt32(objUsuario.login));
+                    this.Hide();
                     FormPantallaCliente frm = new FormPantallaCliente(objcliente);
+                    frm.Closed += (s, args) => this.Show();
                     frm.ShowDialog();
                 }
             }
 
         }
-
         bool Validacion()
         {
             if (txtDNILoginCliente.Text.Trim() == "")
@@ -70,6 +70,7 @@ namespace CapaPresentacion
             return true;
         }
 
+        // Pintar background con degradado
         private void FormIngresoCliente_Paint(object sender, PaintEventArgs e)
         {
             Graphics mgraphics = e.Graphics;

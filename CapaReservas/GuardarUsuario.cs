@@ -9,7 +9,6 @@ namespace CapaReservas
     public class GuardarUsuario
     {
         DataUsuario objDataUsuario = new DataUsuario();
-
         public string RegistrarUsuario(Usuario objUsuario )
         {
             return objDataUsuario.RegistrarUsuario(objUsuario);

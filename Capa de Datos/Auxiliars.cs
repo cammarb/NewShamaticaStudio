@@ -35,5 +35,13 @@ namespace CapaDatos
 
     }
 
+    public class EntityClienteQueMasReserva
+    {
+        public int dni { get; set; }
+        public string name { get; set; }
+        public string correo { get; set; }
+        public int cantidadDeReservasCliente { get; set; }
+    }
+
 
 }

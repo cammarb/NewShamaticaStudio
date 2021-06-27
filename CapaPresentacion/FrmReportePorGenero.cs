@@ -29,6 +29,7 @@ namespace CapaPresentacion
                 charGenero.Series["Serie"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
 
                 charGenero.Series["Serie"].YValueMembers = "numclientes";
+                charGenero.Series["Serie"].IsValueShownAsLabel = true;
 
                 charGenero.Series["Serie"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
 

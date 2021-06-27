@@ -12,10 +12,13 @@ namespace CapaDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Instrumento
+    public partial class ControladoraInstrumento
     {
-        public int id_instrumento { get; set; }
-        public string nombre_instrumento { get; set; }
-        public Nullable<int> costo_instrumento { get; set; }
+        public int id_controlador { get; set; }
+        public Nullable<System.DateTime> fecha_controlador { get; set; }
+        public string hora_inicial { get; set; }
+        public string hora_final { get; set; }
+        public string estado { get; set; }
+        public Nullable<int> identificador_intrumento { get; set; }
     }
 }
