@@ -22,8 +22,8 @@ namespace CapaReservas
         {
             return objHorario.ListarHorarios();
         }
-        public List<EntityHorarioMasReservado> HorarioMasReservado() {
-            return objHorario.HorarioMasFreuentado();
+        public List<EntityHorarioMasReservado> HorarioMasReservado(DateTime dateinicio, DateTime datefin) {
+            return objHorario.HorarioMasFrecuentado(dateinicio, datefin);
         }
 
     }

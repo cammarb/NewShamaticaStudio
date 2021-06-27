@@ -38,7 +38,6 @@ namespace CapaPresentacion
             dgSalas.DataSource = objSala.ListarSalas();
             dgSalas.Columns["cod_sala"].Visible = false;
             dgSalas.Columns["nom_sala"].HeaderText = "Nombre de la Sala";
-            dgSalas.Columns["disponibilidad_sala"].HeaderText = "Disponibilidad";
         }
         
         
@@ -65,7 +64,6 @@ namespace CapaPresentacion
         {
             Sala objsala = new Sala();
             objsala.nom_sala = tbxNombreSala.Text;
-            objsala.disponibilidad_sala = true;
             MessageBox.Show(objSala.RegistrarDSala(objsala));
             ActualizarDataSalas();
         }

@@ -24,12 +24,11 @@ namespace CapaPresentacion
         void ActualizarDataGridView()
         {
             dgReservasClientes.DataSource = objReserva.ListarReservaPorCliente(objCliente);
-            dgReservasClientes.Columns["id_reserva"].Visible = false;
+            dgReservasClientes.Columns["id_reserva"].HeaderText = "ID de la reserva";
             dgReservasClientes.Columns["cliente_dni"].Visible = false;
-            dgReservasClientes.Columns["codigo_horario"].HeaderText = "Hora";
-            dgReservasClientes.Columns["codigo2_sala"].HeaderText = "Sala";
+            dgReservasClientes.Columns["codigo_horario"].Visible = false;
+            dgReservasClientes.Columns["codigo2_sala"].Visible = false;
             dgReservasClientes.Columns["fecha_reserva"].HeaderText = "Fecha";
-
         }
 
         private void FrmReservasCliente_Load(object sender, EventArgs e)

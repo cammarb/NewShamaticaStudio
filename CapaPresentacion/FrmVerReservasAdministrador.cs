@@ -39,6 +39,11 @@ namespace CapaPresentacion
         dgReservasPorFecha.Columns["codigo2_sala"].HeaderText = "Sala";
         dgReservasPorFecha.Columns["fecha_reserva"].HeaderText = "Fecha";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
    
 }
