@@ -17,12 +17,12 @@ namespace CapaPresentacion
     public partial class FormRegistrarReserva : Form
     {
         Cliente objCliente;
-        Instrumento objInstrumento;
         OpHorario objOpHorario;
         OpSala objOpSala;
         OpInstrumento objOpInstrumento;
         DataReservaInstrumento objReservaInstruemento;
         Reserva objReserva;
+        DataDetalleReserva objDataDetalleReserva;
       
         
         RegistrarReserva objRegistrarReserva = new RegistrarReserva();
@@ -35,6 +35,7 @@ namespace CapaPresentacion
             objOpSala = new OpSala();
             objOpInstrumento = new OpInstrumento();
             objReservaInstruemento = new DataReservaInstrumento();
+            objDataDetalleReserva = new DataDetalleReserva();
 
 
         }
@@ -86,11 +87,20 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor vuelva a intentarlo");
             }
-          
+            
+           //objdetalle.
+           // objDataDetalleReserva.AgregarDetalleReserva
             foreach(Instrumento x in clbInstrumentos.CheckedItems)
             {
                 objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
             }
+            DetalleReserva objdetalle = new DetalleReserva();
+            objdetalle.horario_reserva = cboxHorario.Text;
+            objdetalle.id2_reserva = objReserva.id_reserva;
+            objdetalle.nombre_cliente = objCliente.cli_nombre;
+            objdetalle.nom_sala = cboxSala.Text;
+            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
+
 
 
         }

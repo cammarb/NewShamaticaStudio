@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="111">
+      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="125">
         <EntityTypeShape EntityType="ShamaticaStudioModel.Administrador" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="4.75" PointY="0.75" />

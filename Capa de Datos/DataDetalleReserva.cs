@@ -16,13 +16,16 @@ namespace CapaDatos
                 contexto.SaveChanges();
             }
         }
-        //public DetalleReserva BuscarDetalleReserva(int idreserva)
-        //{
-        //    ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
-        //    DetalleReserva detox = new DetalleReserva();
-        //    var outcome = (from reservas in contexto.Reservas
-        //                  join detalle in contexto.DetalleReservas on reservas.id_reserva equals detalle.id2_reserva
-        //                  )            
-        //}
+       public DetalleReserva BuscarDetalleReserva(int idreserva)
+       {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var outcome = (from detalle in contexto.DetalleReservas
+                                    where detalle.id2_reserva == idreserva
+                               select detalle).SingleOrDefault();
+                return outcome;
+            }
+
+       }
     }
 }
