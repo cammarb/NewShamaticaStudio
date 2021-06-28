@@ -34,14 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\UPC\PROGRAMACION\TresCapas\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\UPC\PROGRAMACION\TresCapas\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +91,78 @@
     <Compile Include="FormRegistrarCliente.Designer.cs">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarReserva.Designer.cs">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesQueMasReservan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesQueMasReservan.Designer.cs">
+      <DependentUpon>FrmClientesQueMasReservan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetalleReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetalleReserva.Designer.cs">
+      <DependentUpon>FrmDetalleReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionarCliente.Designer.cs">
+      <DependentUpon>FrmGestionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionInstrumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionInstrumentos.Designer.cs">
+      <DependentUpon>FrmGestionInstrumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHorariosMasFrecuentados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorariosMasFrecuentados.Designer.cs">
+      <DependentUpon>FrmHorariosMasFrecuentados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHorariosYSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorariosYSalas.Designer.cs">
+      <DependentUpon>FrmHorariosYSalas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInstrumentosReservadosPorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInstrumentosReservadosPorFecha.Designer.cs">
+      <DependentUpon>FrmInstrumentosReservadosPorFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoCliente.Designer.cs">
+      <DependentUpon>FrmListadoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportePorGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportePorGenero.Designer.cs">
+      <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReservasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReservasCliente.Designer.cs">
+      <DependentUpon>FrmReservasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVerReservasAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerReservasAdministrador.Designer.cs">
+      <DependentUpon>FrmVerReservasAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormIngresarAdministrador.resx">
@@ -109,6 +183,42 @@
     <EmbeddedResource Include="FormRegistrarCliente.resx">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarReserva.resx">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesQueMasReservan.resx">
+      <DependentUpon>FrmClientesQueMasReservan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetalleReserva.resx">
+      <DependentUpon>FrmDetalleReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionarCliente.resx">
+      <DependentUpon>FrmGestionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionInstrumentos.resx">
+      <DependentUpon>FrmGestionInstrumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorariosMasFrecuentados.resx">
+      <DependentUpon>FrmHorariosMasFrecuentados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorariosYSalas.resx">
+      <DependentUpon>FrmHorariosYSalas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInstrumentosReservadosPorFecha.resx">
+      <DependentUpon>FrmInstrumentosReservadosPorFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoCliente.resx">
+      <DependentUpon>FrmListadoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportePorGenero.resx">
+      <DependentUpon>FrmReportePorGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReservasCliente.resx">
+      <DependentUpon>FrmReservasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerReservasAdministrador.resx">
+      <DependentUpon>FrmVerReservasAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,6 +228,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

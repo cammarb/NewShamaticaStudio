@@ -15,6 +15,6 @@ namespace CapaDatos
     public partial class Sala
     {
         public int cod_sala { get; set; }
-        public Nullable<int> num_sala { get; set; }
+        public string nom_sala { get; set; }
     }
 }

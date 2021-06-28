@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using CapaReservas;
+using System.Drawing.Drawing2D;
 
 namespace CapaPresentacion
 {
@@ -21,7 +22,9 @@ namespace CapaPresentacion
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormRegistrarCliente frm = new FormRegistrarCliente();
+            frm.Closed += (s, args) => this.Show();
             frm.ShowDialog();
         }
 
@@ -34,13 +37,17 @@ namespace CapaPresentacion
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormIngresarAdministrador frm = new FormIngresarAdministrador();
+            frm.Closed += (s, args) => this.Show();
             frm.ShowDialog();
         }
 
         private void ingresarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormIngresoCliente frm = new FormIngresoCliente();
+            frm.Closed += (s, args) => this.Show();
             frm.ShowDialog();
         }
     }
