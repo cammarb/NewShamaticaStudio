@@ -28,7 +28,7 @@ namespace CapaPresentacion
 
         private void FrmListadoCliente_Load(object sender, EventArgs e)
         {
-            lblPromedio.Text = "Promedio de edades genera;es: " + objOpCliente.PromedioGeneralDeEdadesDeCliente();
+            lblPromedio.Text = "Promedio de edades generales: " + objOpCliente.PromedioGeneralDeEdadesDeCliente();
             DataGridViewDefault();
             LimpiarDataGridView();
         }
@@ -43,7 +43,8 @@ namespace CapaPresentacion
             dgClientes.Columns["cli_correo"].Visible = false;
             dgClientes.Columns["codigo_sala"].Visible = false;
             dgClientes.Columns["cli_banda"].Visible = false;
-           // dgClientes.Columns["Reserva"].Visible = false;
+            dgClientes.Columns["cli_ultimareserva"].HeaderText = "Ultima Reserva";
+            // dgClientes.Columns["Reserva"].Visible = false;
         }
 
         private void tbxMiscelaneo_TextChanged(object sender, EventArgs e)
@@ -103,6 +104,11 @@ namespace CapaPresentacion
             LinearGradientBrush lgb = new LinearGradientBrush(area, Color.FromArgb(67, 137, 162), Color.FromArgb(120, 255, 214), LinearGradientMode.Vertical);
             mgraphics.FillRectangle(lgb, area);
             mgraphics.DrawRectangle(pen, area);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

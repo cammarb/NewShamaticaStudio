@@ -4,17 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="125">
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Administrador" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Horario" Width="1.5" PointX="0.75" PointY="7.375" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="3.375" PointY="7" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.ReservaInstrumento" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.ControladoraInstrumento" Width="2.375" PointX="9.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.Sala" Width="1.5" PointX="2.75" PointY="4.75" />
+      <Diagram DiagramId="af46ffecf1d645ca903111a33ba14ede" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Administrador" Width="1.5" PointX="2.75" PointY="7.25" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Cliente" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.DetalleReserva" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Horario" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="9.875" PointY="1.5" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.ReservaInstrumento" Width="1.5" PointX="7.5" PointY="1.375" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Sala" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="0.75" PointY="7.25" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Cliente" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_DetalleReserva_Reserva" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_DetalleReserva_ReservaInstrumento" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Horario" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_ReservaInstrumento_Instrumento" />
+        <AssociationConnector Association="ShamaticaStudioModel.FK_Reserva_Sala" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

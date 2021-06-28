@@ -53,7 +53,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(objRegistrarCliente.RegistrarClient(objcliente));
                 objGuardarUsuario.RegistrarUsuario(objUsuario);
-                //enviarCorreo(objcliente);
+                enviarCorreo(objcliente);
             }
             else
             {

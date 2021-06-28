@@ -46,22 +46,23 @@ namespace CapaPresentacion
             this.lblCodigo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodigo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
-            this.lblCodigo.Location = new System.Drawing.Point(27, 69);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(36, 85);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(80, 25);
+            this.lblCodigo.Size = new System.Drawing.Size(106, 33);
             this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Codigo ";
             // 
             // dgInstrumentos
             // 
+            this.dgInstrumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgInstrumentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgInstrumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInstrumentos.Location = new System.Drawing.Point(30, 270);
-            this.dgInstrumentos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgInstrumentos.Location = new System.Drawing.Point(40, 332);
+            this.dgInstrumentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgInstrumentos.Name = "dgInstrumentos";
             this.dgInstrumentos.RowHeadersWidth = 51;
             this.dgInstrumentos.RowTemplate.Height = 24;
-            this.dgInstrumentos.Size = new System.Drawing.Size(270, 168);
+            this.dgInstrumentos.Size = new System.Drawing.Size(360, 207);
             this.dgInstrumentos.TabIndex = 2;
             // 
             // lblFecha
@@ -70,10 +71,9 @@ namespace CapaPresentacion
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(28, 103);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFecha.Location = new System.Drawing.Point(37, 127);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(74, 25);
+            this.lblFecha.Size = new System.Drawing.Size(93, 33);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "Fecha ";
             // 
@@ -83,10 +83,9 @@ namespace CapaPresentacion
             this.lblHorario.BackColor = System.Drawing.Color.Transparent;
             this.lblHorario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorario.ForeColor = System.Drawing.Color.White;
-            this.lblHorario.Location = new System.Drawing.Point(28, 145);
-            this.lblHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHorario.Location = new System.Drawing.Point(37, 178);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(82, 25);
+            this.lblHorario.Size = new System.Drawing.Size(108, 33);
             this.lblHorario.TabIndex = 4;
             this.lblHorario.Text = "Horario";
             // 
@@ -96,10 +95,9 @@ namespace CapaPresentacion
             this.lblInstrumentos.BackColor = System.Drawing.Color.Transparent;
             this.lblInstrumentos.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstrumentos.ForeColor = System.Drawing.Color.White;
-            this.lblInstrumentos.Location = new System.Drawing.Point(25, 233);
-            this.lblInstrumentos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInstrumentos.Location = new System.Drawing.Point(33, 287);
             this.lblInstrumentos.Name = "lblInstrumentos";
-            this.lblInstrumentos.Size = new System.Drawing.Size(267, 25);
+            this.lblInstrumentos.Size = new System.Drawing.Size(341, 33);
             this.lblInstrumentos.TabIndex = 5;
             this.lblInstrumentos.Text = "Instruementos Reservados";
             // 
@@ -109,10 +107,9 @@ namespace CapaPresentacion
             this.lblSala.BackColor = System.Drawing.Color.Transparent;
             this.lblSala.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSala.ForeColor = System.Drawing.Color.White;
-            this.lblSala.Location = new System.Drawing.Point(28, 184);
-            this.lblSala.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSala.Location = new System.Drawing.Point(37, 226);
             this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(53, 25);
+            this.lblSala.Size = new System.Drawing.Size(68, 33);
             this.lblSala.TabIndex = 6;
             this.lblSala.Text = "Sala";
             // 
@@ -122,10 +119,9 @@ namespace CapaPresentacion
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(56, 28);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(75, 34);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(222, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(281, 33);
             this.lblTitulo.TabIndex = 7;
             this.lblTitulo.Text = "Detalle De La Reserva";
             // 
@@ -136,9 +132,10 @@ namespace CapaPresentacion
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(166, 455);
+            this.btnVolver.Location = new System.Drawing.Point(221, 560);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(134, 45);
+            this.btnVolver.Size = new System.Drawing.Size(179, 55);
             this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -146,9 +143,9 @@ namespace CapaPresentacion
             // 
             // FrmDetalleReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 526);
+            this.ClientSize = new System.Drawing.Size(437, 647);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblSala);
@@ -157,7 +154,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.dgInstrumentos);
             this.Controls.Add(this.lblCodigo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmDetalleReserva";
             this.Text = "Detalle de reserva";
             this.Load += new System.EventHandler(this.FrmDetalleReserva_Load);

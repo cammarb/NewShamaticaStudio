@@ -39,21 +39,23 @@ namespace CapaPresentacion
             // 
             // dgReservasPorFecha
             // 
+            this.dgReservasPorFecha.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgReservasPorFecha.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgReservasPorFecha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReservasPorFecha.Location = new System.Drawing.Point(30, 127);
-            this.dgReservasPorFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.dgReservasPorFecha.Location = new System.Drawing.Point(40, 156);
+            this.dgReservasPorFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgReservasPorFecha.Name = "dgReservasPorFecha";
             this.dgReservasPorFecha.RowHeadersWidth = 51;
             this.dgReservasPorFecha.RowTemplate.Height = 24;
-            this.dgReservasPorFecha.Size = new System.Drawing.Size(661, 248);
+            this.dgReservasPorFecha.Size = new System.Drawing.Size(881, 305);
             this.dgReservasPorFecha.TabIndex = 0;
             // 
             // dTimeSelect
             // 
-            this.dTimeSelect.Location = new System.Drawing.Point(200, 92);
-            this.dTimeSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.dTimeSelect.Location = new System.Drawing.Point(267, 113);
+            this.dTimeSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTimeSelect.Name = "dTimeSelect";
-            this.dTimeSelect.Size = new System.Drawing.Size(208, 20);
+            this.dTimeSelect.Size = new System.Drawing.Size(276, 22);
             this.dTimeSelect.TabIndex = 1;
             this.dTimeSelect.ValueChanged += new System.EventHandler(this.dTimeSelect_ValueChanged);
             // 
@@ -63,10 +65,9 @@ namespace CapaPresentacion
             this.lblFiltrado.BackColor = System.Drawing.Color.Transparent;
             this.lblFiltrado.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltrado.ForeColor = System.Drawing.Color.White;
-            this.lblFiltrado.Location = new System.Drawing.Point(32, 92);
-            this.lblFiltrado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFiltrado.Location = new System.Drawing.Point(43, 113);
             this.lblFiltrado.Name = "lblFiltrado";
-            this.lblFiltrado.Size = new System.Drawing.Size(164, 19);
+            this.lblFiltrado.Size = new System.Drawing.Size(200, 24);
             this.lblFiltrado.TabIndex = 2;
             this.lblFiltrado.Text = "Seleccione una fecha";
             // 
@@ -78,9 +79,10 @@ namespace CapaPresentacion
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(560, 403);
+            this.button1.Location = new System.Drawing.Point(747, 496);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 49);
+            this.button1.Size = new System.Drawing.Size(175, 60);
             this.button1.TabIndex = 3;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = false;
@@ -92,24 +94,23 @@ namespace CapaPresentacion
             this.lblTexto.BackColor = System.Drawing.Color.Transparent;
             this.lblTexto.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTexto.ForeColor = System.Drawing.Color.White;
-            this.lblTexto.Location = new System.Drawing.Point(29, 29);
-            this.lblTexto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTexto.Location = new System.Drawing.Point(39, 36);
             this.lblTexto.Name = "lblTexto";
-            this.lblTexto.Size = new System.Drawing.Size(189, 35);
+            this.lblTexto.Size = new System.Drawing.Size(242, 45);
             this.lblTexto.TabIndex = 4;
             this.lblTexto.Text = "Ver Reservas";
             // 
             // FrmVerReservasAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 472);
+            this.ClientSize = new System.Drawing.Size(953, 581);
             this.Controls.Add(this.lblTexto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblFiltrado);
             this.Controls.Add(this.dTimeSelect);
             this.Controls.Add(this.dgReservasPorFecha);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmVerReservasAdministrador";
             this.Text = "FrmVerReservasAdministrador";
             this.Load += new System.EventHandler(this.FrmVerReservasAdministrador_Load);

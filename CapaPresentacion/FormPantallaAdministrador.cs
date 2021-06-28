@@ -94,5 +94,14 @@ namespace CapaPresentacion
             frm.ShowDialog();
 
         }
+
+        private void btnGraficoInstrumentos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmInstrumentosReservadosPorFecha frm = new FrmInstrumentosReservadosPorFecha();
+            frm.Closed += (s, args) => this.Show();
+            frm.ShowDialog();
+        }
+    
     }
 }

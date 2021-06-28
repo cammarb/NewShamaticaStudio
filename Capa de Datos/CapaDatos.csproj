@@ -60,9 +60,6 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ControladoraInstrumento.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataAdmin.cs" />
     <Compile Include="DataCliente.cs" />
     <Compile Include="DataDetalleReserva.cs" />

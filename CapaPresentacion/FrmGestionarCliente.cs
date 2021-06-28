@@ -37,7 +37,8 @@ namespace CapaPresentacion
             dgClientes.Columns["cli_correo"].HeaderText = "Correo";
             dgClientes.Columns["codigo_sala"].Visible = false;
             dgClientes.Columns["cli_banda"].HeaderText = "Banda";
-            //dgClientes.Columns["Reserva"].Visible = false;
+            dgClientes.Columns["cli_ultimareserva"].HeaderText = "Ultima Reserva";
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

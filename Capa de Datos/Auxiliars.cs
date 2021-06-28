@@ -49,4 +49,10 @@ namespace CapaDatos
         public string Nombre { get; set; }
     }
 
+    public class EntityPromedioDeInstrumentosReservados
+    {
+        public int contador_instrumento { get; set; }
+        public string nombre_instrumento { get; set; }
+    }
+
 }
