@@ -21,7 +21,8 @@ namespace CapaDatos
         public string cli_universidad { get; set; }
         public string cli_distrito { get; set; }
         public string cli_correo { get; set; }
-        public Nullable<int> cod_sala { get; set; }
+        public Nullable<int> codigo_sala { get; set; }
         public string cli_banda { get; set; }
+        public Nullable<System.DateTime> cli_ultimareserva { get; set; }
     }
 }

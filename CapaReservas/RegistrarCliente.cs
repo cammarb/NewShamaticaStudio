@@ -23,7 +23,63 @@ namespace CapaReservas
         {
             return objDataCliente.ClienteExiste(objcliente);
         }
+        public string ModificarCliente(Cliente objCliente)
+        {
+            return objDataCliente.ModificarCliente(objCliente);
+        }
+        public string EliminarCliente(int dni)
+        {
+            return objDataCliente.EliminarCliente(dni);
+        }
+        public List<Cliente> ListarCliente()
+        {
+            return objDataCliente.Listarclientesregistrados();
+        }
+        public List<Cliente> ListarClientePorNombre(string contenido)
+        {
+            return objDataCliente.ListarClientePorNombre(contenido);
+        }
+        public List<Cliente> ListarClientePorDNI(string dni)
+        {
+            return objDataCliente.ListarClientePorDNI(dni);
+        }
+        public List<Cliente> ListarClientePorSexo(string sexo)
+        {
+            return objDataCliente.ListarClientePorSexo(sexo);
+        }
+        public List<Cliente> LIstarClientePorDistrito(string distrito)
+        {
+            return objDataCliente.ListarClientesPorDistrito(distrito);
+        }
+        public List<Cliente> ListarClientePorUniversidad(string universidad)
+        {
+            return objDataCliente.ListarClientePorUniversidad(universidad);
+        }
+        public List<Cliente> ListarClientePorEdad(int edad)
+        {
+            return objDataCliente.ListarClientePorEdad(Convert.ToString(edad));
+        }
+        public List<EntityNumGeneroCliente> ListadoClientePorGeneroDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorGeneroPorDefault();
+        }
+        public List<EntityNumClienteporDistrito> ListadoAgrupadoPorDistritoDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorDistritoDefault();
+        }
 
+        public List<EntityNumClienteporUniversidad> ListadoAgrupadoPorUniversadDefault()
+        {
+            return objDataCliente.ListadoAgrupadoPorUniversidadDefault();
+        }
+        public double PromedioGeneralDeEdadesDeCliente()
+        {
+            return objDataCliente.PromedioDeEdadesDeClientes();
+        }
 
+        public List<EntityClienteQueMasReserva> ListadoDeClientesQueMasReservan(DateTime dateini, DateTime datefin)
+        {
+            return objDataCliente.ClientesQueMasFrecuentan(dateini, datefin);
+        }
     }
 }
