@@ -47,7 +47,9 @@ namespace CapaPresentacion
             {
                 DataGridViewRow filaSeleccionada = dgReservasClientes.Rows[e.RowIndex];
                 int id = Convert.ToInt32(dgReservasClientes.SelectedRows[0].Cells[0].Value);
-                FrmDetalleReserva frm = new FrmDetalleReserva(id);
+                string fecha= Convert.ToString(dgReservasClientes.SelectedRows[0].Cells[4].Value);
+                //fecha = fecha.();
+                FrmDetalleReserva frm = new FrmDetalleReserva(id,fecha);
                 frm.ShowDialog();
             }
             

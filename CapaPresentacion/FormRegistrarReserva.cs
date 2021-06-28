@@ -81,7 +81,17 @@ namespace CapaPresentacion
             if (res == null )
             {
                 MessageBox.Show("hola");              
-                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva)); 
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
+                foreach (Instrumento x in clbInstrumentos.CheckedItems)
+                {
+                    objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
+                }
+                DetalleReserva objdetalle = new DetalleReserva();
+                objdetalle.horario_reserva = cboxHorario.Text;
+                objdetalle.id2_reserva = objReserva.id_reserva;
+                objdetalle.nombre_cliente = objCliente.cli_nombre;
+                objdetalle.nom_sala = cboxSala.Text;
+                objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
             }
             else
             {
@@ -90,7 +100,7 @@ namespace CapaPresentacion
             
            //objdetalle.
            // objDataDetalleReserva.AgregarDetalleReserva
-            foreach(Instrumento x in clbInstrumentos.CheckedItems)
+           /* foreach(Instrumento x in clbInstrumentos.CheckedItems)
             {
                 objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
             }
@@ -99,7 +109,7 @@ namespace CapaPresentacion
             objdetalle.id2_reserva = objReserva.id_reserva;
             objdetalle.nombre_cliente = objCliente.cli_nombre;
             objdetalle.nom_sala = cboxSala.Text;
-            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
+            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);*/
 
 
 
