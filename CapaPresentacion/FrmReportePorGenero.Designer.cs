@@ -115,10 +115,12 @@ namespace CapaPresentacion
             this.btnVolver.TabIndex = 30;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblTexto
             // 
             this.lblTexto.AutoSize = true;
+            this.lblTexto.BackColor = System.Drawing.Color.Transparent;
             this.lblTexto.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTexto.ForeColor = System.Drawing.Color.White;
             this.lblTexto.Location = new System.Drawing.Point(40, 37);
