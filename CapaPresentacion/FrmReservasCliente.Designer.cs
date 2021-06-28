@@ -41,14 +41,16 @@ namespace CapaPresentacion
             this.dgReservasClientes.AllowUserToDeleteRows = false;
             this.dgReservasClientes.AllowUserToResizeColumns = false;
             this.dgReservasClientes.AllowUserToResizeRows = false;
+            this.dgReservasClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgReservasClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgReservasClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReservasClientes.Location = new System.Drawing.Point(37, 111);
-            this.dgReservasClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgReservasClientes.Location = new System.Drawing.Point(49, 137);
+            this.dgReservasClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgReservasClientes.MultiSelect = false;
             this.dgReservasClientes.Name = "dgReservasClientes";
             this.dgReservasClientes.RowHeadersWidth = 51;
             this.dgReservasClientes.RowTemplate.Height = 24;
-            this.dgReservasClientes.Size = new System.Drawing.Size(357, 376);
+            this.dgReservasClientes.Size = new System.Drawing.Size(476, 463);
             this.dgReservasClientes.TabIndex = 0;
             this.dgReservasClientes.AllowUserToAddRowsChanged += new System.EventHandler(this.False);
             this.dgReservasClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReservasClientes_CellClick);
@@ -60,10 +62,9 @@ namespace CapaPresentacion
             this.btnDetalle.BackColor = System.Drawing.Color.Transparent;
             this.btnDetalle.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.Location = new System.Drawing.Point(34, 50);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnDetalle.Location = new System.Drawing.Point(45, 62);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(280, 33);
+            this.btnDetalle.Size = new System.Drawing.Size(352, 41);
             this.btnDetalle.TabIndex = 1;
             this.btnDetalle.Text = "Reservas Registradas";
             // 
@@ -74,9 +75,10 @@ namespace CapaPresentacion
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(260, 521);
+            this.btnVolver.Location = new System.Drawing.Point(347, 641);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(134, 45);
+            this.btnVolver.Size = new System.Drawing.Size(179, 55);
             this.btnVolver.TabIndex = 9;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -84,13 +86,13 @@ namespace CapaPresentacion
             // 
             // FrmReservasCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 578);
+            this.ClientSize = new System.Drawing.Size(583, 711);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dgReservasClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmReservasCliente";
             this.Text = "FrmReservasCliente";
             this.Load += new System.EventHandler(this.FrmReservasCliente_Load);

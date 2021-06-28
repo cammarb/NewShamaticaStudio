@@ -18,13 +18,12 @@ namespace CapaPresentacion
     {
         Cliente objCliente;
         OpHorario objOpHorario;
+        Reserva objReserva;
         OpSala objOpSala;
         OpInstrumento objOpInstrumento;
+        DataCliente objDataCliente;
         DataReservaInstrumento objReservaInstruemento;
-        Reserva objReserva;
         DataDetalleReserva objDataDetalleReserva;
-      
-        
         RegistrarReserva objRegistrarReserva = new RegistrarReserva();
         public FormRegistrarReserva(Cliente objcliente)
         {
@@ -36,6 +35,9 @@ namespace CapaPresentacion
             objOpInstrumento = new OpInstrumento();
             objReservaInstruemento = new DataReservaInstrumento();
             objDataDetalleReserva = new DataDetalleReserva();
+            objDataCliente = new DataCliente();
+            DateTimeFecha.MinDate = DateTime.Now.AddDays(1);
+            DateTimeFecha.MaxDate = DateTime.Now.AddDays(30);
 
 
         }
@@ -73,32 +75,31 @@ namespace CapaPresentacion
             objReserva.codigo_horario = (int)cboxHorario.SelectedValue;
             objReserva.codigo2_sala = (int)cboxSala.SelectedValue;
             objReserva.fecha_reserva = DateTimeFecha.Value.Date;
-            objCliente.cli_ultimareserva = objReserva.fecha_reserva;
             
             var res = objRegistrarReserva.ReservaExistente(objReserva);
 
             if (res == null )
-            {
-                MessageBox.Show("hola");              
-                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva)); 
+            {       
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
+                foreach (Instrumento x in clbInstrumentos.CheckedItems)
+                {
+                    objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
+                }
+                DetalleReserva objdetalle = new DetalleReserva();
+                objdetalle.horario_reserva = cboxHorario.Text;
+                objdetalle.id2_reserva = objReserva.id_reserva;
+                objdetalle.nombre_cliente = objCliente.cli_nombre;
+                objdetalle.nom_sala = cboxSala.Text;
+                objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
+                objDataCliente.AgregarUltimaReservaDelCliente(objCliente.cli_dni, DateTimeFecha.Value.Date);
+                
             }
             else
             {
                 MessageBox.Show("Por favor vuelva a intentarlo");
             }
             
-           //objdetalle.
-           // objDataDetalleReserva.AgregarDetalleReserva
-            foreach(Instrumento x in clbInstrumentos.CheckedItems)
-            {
-                objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
-            }
-            DetalleReserva objdetalle = new DetalleReserva();
-            objdetalle.horario_reserva = cboxHorario.Text;
-            objdetalle.id2_reserva = objReserva.id_reserva;
-            objdetalle.nombre_cliente = objCliente.cli_nombre;
-            objdetalle.nom_sala = cboxSala.Text;
-            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
+           
         }
 
     }

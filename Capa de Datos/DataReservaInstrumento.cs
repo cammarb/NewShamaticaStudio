@@ -32,18 +32,61 @@ namespace CapaDatos
         {
             List<EntityInstrumentoReservado> lista = new List<EntityInstrumentoReservado>();
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
-            var random = from reserva in contexto.Reservas
-                         join reinstrumento in contexto.ReservasInstrumentos on reserva.id_reserva equals id
-                         group reinstrumento by reinstrumento.id_instrumento into NuevoGrupo
-                         select NuevoGrupo;
-            foreach (var instrumento in contexto.Instrumentos)
+            var random = (from reserva in contexto.ReservasInstrumentos
+                          where reserva.id_reservarel == id
+                          join instroomento in contexto.Instrumentos on reserva.id_instrumento equals instroomento.id_instrumento
+                          group instroomento by instroomento.id_instrumento into NuevoGrupo
+                          select NuevoGrupo).ToList();
+            foreach (var abc in random)
             {
                 EntityInstrumentoReservado obj = new EntityInstrumentoReservado();
-                obj.Codigo = instrumento.id_instrumento;
-                obj.Nombre = instrumento.nombre_instrumento;
+                obj.Codigo = abc.Key;
+                DataInstrumento tmpinstrumento = new DataInstrumento();
+                obj.Nombre = tmpinstrumento.BuscarInstrumento(obj.Codigo);
                 lista.Add(obj);
             }
             return lista;
+        }
+        public List<EntityPromedioDeInstrumentosReservados> PromedioDeInstrumentosReservadosPorFecha(DateTime fecha)
+        {
+            List<EntityPromedioDeInstrumentosReservados> lista = new List<EntityPromedioDeInstrumentosReservados>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var random = from reservas in contexto.Reservas
+                         join reservainstrumento in contexto.ReservasInstrumentos on reservas.id_reserva equals reservainstrumento.id_reservarel
+                         where reservas.fecha_reserva == fecha.Date
+                         group reservainstrumento by reservainstrumento.id_instrumento into GrupoIds
+                         select GrupoIds;
+
+
+            foreach(var abc in random)
+            {
+                EntityPromedioDeInstrumentosReservados obj = new EntityPromedioDeInstrumentosReservados();
+                DataInstrumento dinst = new DataInstrumento();
+                obj.nombre_instrumento = dinst.BuscarInstrumento((int)abc.Key);
+                obj.contador_instrumento = abc.Count();
+                lista.Add(obj);
+            }
+            return lista;
+        }
+        public int PromedioDeInstrumentosPorFechaEnValor(DateTime fecha)
+        {
+            List<double> amount = new List<double>();
+            List<EntityPromedioDeInstrumentosReservados> lista = new List<EntityPromedioDeInstrumentosReservados>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var random = from reservas in contexto.Reservas
+                         join reservainstrumento in contexto.ReservasInstrumentos on reservas.id_reserva equals reservainstrumento.id_reservarel
+                         where reservas.fecha_reserva == fecha.Date
+                         group reservainstrumento by reservainstrumento.id_instrumento into GrupoIds
+                         select GrupoIds;
+
+
+            foreach (var abc in random)
+            {
+                double tmp;
+                tmp= abc.Count();
+                amount.Add(tmp);
+            }
+            return Convert.ToInt32(amount.Average());
         }
     }
 }

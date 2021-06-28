@@ -76,6 +76,15 @@ namespace CapaDatos
                 return "El cliente se modifico exitosamente";
             }
         }
+        public void AgregarUltimaReservaDelCliente(int dni, DateTime fecha)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var modifi = contexto.Clientes.Find(dni);
+                modifi.cli_ultimareserva = fecha;
+                contexto.SaveChanges();
+            }
+        }
 
         public string EliminarCliente(int dni)
         {
@@ -214,7 +223,8 @@ namespace CapaDatos
                 obj.cantidadDeReservasCliente = abcde.Count();
                 objNum.Add(obj);
             }
-            return objNum;
+           
+            return objNum.OrderByDescending(x => x.cantidadDeReservasCliente).Take(10).ToList();
         }
     }
 }

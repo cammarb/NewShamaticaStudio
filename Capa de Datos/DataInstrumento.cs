@@ -46,6 +46,16 @@ namespace CapaDatos
 
             }
         }
+        public string BuscarInstrumento(int id)
+        {
+            using (var contexto = new ShamaticaStudioEntities())
+            {
+                var result = (from something in contexto.Instrumentos
+                              where something.id_instrumento == id
+                              select something).SingleOrDefault();
+                return result.nombre_instrumento;
+            }
+        }
         public int CalcularInventarioInstrumentos()
         {
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
