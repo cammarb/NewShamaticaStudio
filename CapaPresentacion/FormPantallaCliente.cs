@@ -34,13 +34,17 @@ namespace CapaPresentacion
 
         private void btnRealizarReserva_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormRegistrarReserva frm = new FormRegistrarReserva(objCliente);
+            frm.Closed += (s, args) => this.Show();
             frm.ShowDialog();
         }
 
         private void btnVerReservas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmReservasCliente frm = new FrmReservasCliente(objCliente);
+            frm.Closed += (s, args) => this.Show();
             frm.ShowDialog();
         }
     }

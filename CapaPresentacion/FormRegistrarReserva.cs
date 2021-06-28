@@ -44,7 +44,6 @@ namespace CapaPresentacion
             cboxHorario.DataSource = objOpHorario.ListarHorario();
             cboxHorario.DisplayMember = "hora_reserva";
             cboxHorario.ValueMember = "id_horario";//int
-            //cboxHorario.BindingContext = this->BindingContext;
 
             cboxSala.DataSource = objOpSala.ListarSalas();
             cboxSala.DisplayMember = "nom_sala";
@@ -100,9 +99,6 @@ namespace CapaPresentacion
             objdetalle.nombre_cliente = objCliente.cli_nombre;
             objdetalle.nom_sala = cboxSala.Text;
             objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
-
-
-
         }
 
     }

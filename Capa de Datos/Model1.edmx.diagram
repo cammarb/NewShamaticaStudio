@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="ShamaticaStudioModel.Reserva" Width="1.5" PointX="3.375" PointY="7" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.ReservaInstrumento" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Usuario" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ShamaticaStudioModel.ControladoraInstrumento" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ShamaticaStudioModel.ControladoraInstrumento" Width="2.375" PointX="9.75" PointY="0.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Instrumento" Width="1.5" PointX="0.75" PointY="4.75" />
         <EntityTypeShape EntityType="ShamaticaStudioModel.Sala" Width="1.5" PointX="2.75" PointY="4.75" />
       </Diagram>
