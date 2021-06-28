@@ -14,16 +14,7 @@ namespace CapaDatos
     
     public partial class Horario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Horario()
-        {
-            this.Reserva = new HashSet<Reserva>();
-        }
-    
         public int id_horario { get; set; }
         public string hora_reserva { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reserva> Reserva { get; set; }
     }
 }

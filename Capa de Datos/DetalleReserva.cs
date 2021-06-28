@@ -20,8 +20,5 @@ namespace CapaDatos
         public string horario_reserva { get; set; }
         public string nom_sala { get; set; }
         public Nullable<int> reinstrumento_codigo { get; set; }
-    
-        public virtual Reserva Reserva { get; set; }
-        public virtual ReservaInstrumento ReservaInstrumento { get; set; }
     }
 }

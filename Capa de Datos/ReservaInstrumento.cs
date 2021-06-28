@@ -14,18 +14,8 @@ namespace CapaDatos
     
     public partial class ReservaInstrumento
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ReservaInstrumento()
-        {
-            this.DetalleReserva = new HashSet<DetalleReserva>();
-        }
-    
         public int id_reservainstrumento { get; set; }
         public Nullable<int> id_reservarel { get; set; }
         public Nullable<int> id_instrumento { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleReserva> DetalleReserva { get; set; }
-        public virtual Instrumento Instrumento { get; set; }
     }
 }
