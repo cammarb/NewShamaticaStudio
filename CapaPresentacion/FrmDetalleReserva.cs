@@ -34,10 +34,10 @@ namespace CapaPresentacion
 
         private void FrmDetalleReserva_Load(object sender, EventArgs e)
         {
-            lblCodigo.Text += objDetalle.id2_reserva;
-            lblHorario.Text += objDetalle.horario_reserva;
-            lblFecha.Text += fecha;
-            lblSala.Text += objDetalle.nom_sala;
+            lblCodigo.Text += " "+objDetalle.id2_reserva;
+            lblHorario.Text += " "+objDetalle.horario_reserva;
+            lblFecha.Text += " "+fecha;
+            lblSala.Text += " "+objDetalle.nom_sala;
             dgInstrumentos.DataSource = objDataReservaInstrumento.MostrarInstrumentosReservados(identificador);
         }
 

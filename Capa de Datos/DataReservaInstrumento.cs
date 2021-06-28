@@ -51,14 +51,6 @@ namespace CapaDatos
         {
             List<EntityPromedioDeInstrumentosReservados> lista = new List<EntityPromedioDeInstrumentosReservados>();
             ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
-            /*var random = (from reserva in contexto.Reservas
-                          where reserva.fecha_reserva == fecha.Date
-                          join reservainstrumento in contexto.ReservasInstrumentos on reserva.id_reserva equals reservainstrumento.id_reservarel
-                          group reservainstrumento by reservainstrumento.id_instrumento into GrupoIdInstrumentos
-                          from instrumento in contexto.Instrumentos
-                          where instrumento.id_instrumento == GrupoIdInstrumentos.Key
-                          group instrumento by instrumento.nombre_instrumento into InstrumentosAgrupados
-                          select InstrumentosAgrupados);*/
             var random = from reservas in contexto.Reservas
                          join reservainstrumento in contexto.ReservasInstrumentos on reservas.id_reserva equals reservainstrumento.id_reservarel
                          where reservas.fecha_reserva == fecha.Date
@@ -75,6 +67,26 @@ namespace CapaDatos
                 lista.Add(obj);
             }
             return lista;
+        }
+        public int PromedioDeInstrumentosPorFechaEnValor(DateTime fecha)
+        {
+            List<double> amount = new List<double>();
+            List<EntityPromedioDeInstrumentosReservados> lista = new List<EntityPromedioDeInstrumentosReservados>();
+            ShamaticaStudioEntities contexto = new ShamaticaStudioEntities();
+            var random = from reservas in contexto.Reservas
+                         join reservainstrumento in contexto.ReservasInstrumentos on reservas.id_reserva equals reservainstrumento.id_reservarel
+                         where reservas.fecha_reserva == fecha.Date
+                         group reservainstrumento by reservainstrumento.id_instrumento into GrupoIds
+                         select GrupoIds;
+
+
+            foreach (var abc in random)
+            {
+                double tmp;
+                tmp= abc.Count();
+                amount.Add(tmp);
+            }
+            return Convert.ToInt32(amount.Average());
         }
     }
 }

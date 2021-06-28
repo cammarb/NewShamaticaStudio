@@ -22,16 +22,18 @@ namespace CapaPresentacion
 
         private void FrmClientesQueMasReservan_Load(object sender, EventArgs e)
         {
-           
+          
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMostrar_Click(object sender, EventArgs e)
         {
             DgClientesFrecuentes.DataSource = objDataClientes.ClientesQueMasFrecuentan(dateInicio.Value.Date, dateFin.Value.Date);
             DgClientesFrecuentes.Columns["dni"].HeaderText = "DNI";
             DgClientesFrecuentes.Columns["name"].HeaderText = "Nombre";
             DgClientesFrecuentes.Columns["correo"].HeaderText = "Correo";
             DgClientesFrecuentes.Columns["cantidadDeReservasCliente"].HeaderText = "Cantidad de reservas realizadas";
+            //DgClientesFrecuentes.Sort(DgClientesFrecuentes.Columns[3], objDataClientes.ClientesQueMasFrecuentan(dateInicio.Value.Date, dateFin.Value.Date).Sort();
+           // DgClientesFrecuentes.Rows.max
         }
 
         private void FrmClientesQueMasReservan_Paint(object sender, PaintEventArgs e)
@@ -48,6 +50,11 @@ namespace CapaPresentacion
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DgClientesFrecuentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

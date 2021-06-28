@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using CapaDatos;
 
@@ -37,11 +38,28 @@ namespace CapaPresentacion
             chartInstrumento.Series["Serie"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
 
             chartInstrumento.DataBind();
+            lblPromedioInstrumentosReservados.Text += " "+Convert.ToString(objDataReservaInstrumento.PromedioDeInstrumentosPorFechaEnValor(DatePicker.Value.Date));
         }
 
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblPromedioInstrumentosReservados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmInstrumentosReservadosPorFecha_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics mgraphics = e.Graphics;
+            Pen pen = new Pen(Color.FromArgb(67, 137, 162), 1);
+
+            Rectangle area = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
+            LinearGradientBrush lgb = new LinearGradientBrush(area, Color.FromArgb(67, 137, 162), Color.FromArgb(120, 255, 214), LinearGradientMode.Vertical);
+            mgraphics.FillRectangle(lgb, area);
+            mgraphics.DrawRectangle(pen, area);
         }
     }
 }

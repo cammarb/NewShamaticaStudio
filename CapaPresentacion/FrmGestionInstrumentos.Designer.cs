@@ -45,10 +45,10 @@ namespace CapaPresentacion
             // 
             // tbxCosto
             // 
-            this.tbxCosto.Location = new System.Drawing.Point(146, 178);
-            this.tbxCosto.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxCosto.Location = new System.Drawing.Point(195, 219);
+            this.tbxCosto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxCosto.Name = "tbxCosto";
-            this.tbxCosto.Size = new System.Drawing.Size(178, 20);
+            this.tbxCosto.Size = new System.Drawing.Size(236, 22);
             this.tbxCosto.TabIndex = 27;
             // 
             // lblCosto
@@ -57,10 +57,9 @@ namespace CapaPresentacion
             this.lblCosto.BackColor = System.Drawing.Color.Transparent;
             this.lblCosto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCosto.ForeColor = System.Drawing.Color.White;
-            this.lblCosto.Location = new System.Drawing.Point(33, 180);
-            this.lblCosto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCosto.Location = new System.Drawing.Point(44, 222);
             this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(50, 19);
+            this.lblCosto.Size = new System.Drawing.Size(61, 24);
             this.lblCosto.TabIndex = 26;
             this.lblCosto.Text = "Costo";
             // 
@@ -71,10 +70,10 @@ namespace CapaPresentacion
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(242, 227);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(323, 279);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(82, 34);
+            this.btnEliminar.Size = new System.Drawing.Size(109, 42);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -87,10 +86,10 @@ namespace CapaPresentacion
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(136, 227);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(181, 279);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(90, 34);
+            this.btnModificar.Size = new System.Drawing.Size(120, 42);
             this.btnModificar.TabIndex = 24;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -103,10 +102,10 @@ namespace CapaPresentacion
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(27, 227);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrar.Location = new System.Drawing.Point(36, 279);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(91, 34);
+            this.btnRegistrar.Size = new System.Drawing.Size(121, 42);
             this.btnRegistrar.TabIndex = 23;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -118,13 +117,15 @@ namespace CapaPresentacion
             this.dgInstrumentos.AllowUserToDeleteRows = false;
             this.dgInstrumentos.AllowUserToResizeColumns = false;
             this.dgInstrumentos.AllowUserToResizeRows = false;
+            this.dgInstrumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgInstrumentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgInstrumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInstrumentos.Location = new System.Drawing.Point(352, 66);
-            this.dgInstrumentos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgInstrumentos.Location = new System.Drawing.Point(469, 81);
+            this.dgInstrumentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgInstrumentos.Name = "dgInstrumentos";
             this.dgInstrumentos.RowHeadersWidth = 51;
             this.dgInstrumentos.RowTemplate.Height = 24;
-            this.dgInstrumentos.Size = new System.Drawing.Size(372, 266);
+            this.dgInstrumentos.Size = new System.Drawing.Size(496, 327);
             this.dgInstrumentos.TabIndex = 22;
             this.dgInstrumentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInstrumentos_CellClick);
             this.dgInstrumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInstrumentos_CellContentClick);
@@ -132,10 +133,10 @@ namespace CapaPresentacion
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(146, 144);
-            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxNombre.Location = new System.Drawing.Point(195, 177);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(178, 20);
+            this.tbxNombre.Size = new System.Drawing.Size(236, 22);
             this.tbxNombre.TabIndex = 21;
             // 
             // lblNombre
@@ -144,10 +145,9 @@ namespace CapaPresentacion
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(33, 144);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(44, 177);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 19);
+            this.lblNombre.Size = new System.Drawing.Size(83, 24);
             this.lblNombre.TabIndex = 20;
             this.lblNombre.Text = "Nombre";
             // 
@@ -158,10 +158,10 @@ namespace CapaPresentacion
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(600, 353);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolver.Location = new System.Drawing.Point(800, 434);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(124, 53);
+            this.btnVolver.Size = new System.Drawing.Size(165, 65);
             this.btnVolver.TabIndex = 28;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -172,9 +172,10 @@ namespace CapaPresentacion
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(30, 66);
+            this.lblTitulo.Location = new System.Drawing.Point(40, 81);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(306, 35);
+            this.lblTitulo.Size = new System.Drawing.Size(395, 45);
             this.lblTitulo.TabIndex = 29;
             this.lblTitulo.Text = "Gestionar Instrumento";
             // 
@@ -183,17 +184,18 @@ namespace CapaPresentacion
             this.lblInventarioTotal.AutoSize = true;
             this.lblInventarioTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblInventarioTotal.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventarioTotal.Location = new System.Drawing.Point(37, 377);
+            this.lblInventarioTotal.Location = new System.Drawing.Point(49, 464);
+            this.lblInventarioTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInventarioTotal.Name = "lblInventarioTotal";
-            this.lblInventarioTotal.Size = new System.Drawing.Size(0, 29);
+            this.lblInventarioTotal.Size = new System.Drawing.Size(0, 36);
             this.lblInventarioTotal.TabIndex = 30;
             // 
             // FrmGestionInstrumentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(750, 433);
+            this.ClientSize = new System.Drawing.Size(1000, 533);
             this.Controls.Add(this.lblInventarioTotal);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnVolver);
@@ -205,7 +207,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.dgInstrumentos);
             this.Controls.Add(this.tbxNombre);
             this.Controls.Add(this.lblNombre);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGestionInstrumentos";
             this.Text = "Gestionar Instrumentos";
             this.Load += new System.EventHandler(this.FrmGestionInstrumentos_Load);
