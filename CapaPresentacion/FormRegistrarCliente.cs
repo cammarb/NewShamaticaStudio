@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using CapaDatos;
 using CapaReservas;
 using System.Drawing.Drawing2D;
+//Correo
+using System.Net;
+using System.Net.Mail;
+using System.Web;
+
 
 namespace CapaPresentacion
 {
@@ -44,19 +49,43 @@ namespace CapaPresentacion
             var res = objRegistrarCliente.ClienteExistente(objcliente);
            // var res2 = objGuardarUsuario.RegistrarUsuario(objUsuario);
 
-            MessageBox.Show("Hola");
             if ( res == null)
             {
-                MessageBox.Show("Hola2");
                 MessageBox.Show(objRegistrarCliente.RegistrarClient(objcliente));
                 objGuardarUsuario.RegistrarUsuario(objUsuario);
+                //enviarCorreo(objcliente);
             }
             else
             {
                 MessageBox.Show("Ya existe un usuario con estos datos, por favor vuelva a intentarlo");               
             }
         }
+        // Enviar correo de confirmación
+        public void enviarCorreo(/*Administrador objAdministrador , */Cliente objCliente)
+        {
+            string to = objCliente.cli_correo;
+            string from = "camilamarb98@gmail.com";
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Using the new SMTP client.";
+            message.Body = @"Using this new feature, you can send an email message from an application very easily.";
+            SmtpClient client = new SmtpClient("465");
 
+            
+            // Credentials are necessary if the server requires the client
+            // to authenticate before it will send email on the client's behalf.
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential(from, "contraseña");
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
+                    ex.ToString());
+            }
+        }
         // Pintar background con degradado
         private void FormRegistrarCliente_Paint(object sender, PaintEventArgs e)
         {

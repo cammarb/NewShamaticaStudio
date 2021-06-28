@@ -44,7 +44,6 @@ namespace CapaPresentacion
             cboxHorario.DataSource = objOpHorario.ListarHorario();
             cboxHorario.DisplayMember = "hora_reserva";
             cboxHorario.ValueMember = "id_horario";//int
-            //cboxHorario.BindingContext = this->BindingContext;
 
             cboxSala.DataSource = objOpSala.ListarSalas();
             cboxSala.DisplayMember = "nom_sala";
@@ -81,17 +80,7 @@ namespace CapaPresentacion
             if (res == null )
             {
                 MessageBox.Show("hola");              
-                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva));
-                foreach (Instrumento x in clbInstrumentos.CheckedItems)
-                {
-                    objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
-                }
-                DetalleReserva objdetalle = new DetalleReserva();
-                objdetalle.horario_reserva = cboxHorario.Text;
-                objdetalle.id2_reserva = objReserva.id_reserva;
-                objdetalle.nombre_cliente = objCliente.cli_nombre;
-                objdetalle.nom_sala = cboxSala.Text;
-                objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
+                MessageBox.Show(objRegistrarReserva.RegistrarReservation(objReserva)); 
             }
             else
             {
@@ -100,7 +89,7 @@ namespace CapaPresentacion
             
            //objdetalle.
            // objDataDetalleReserva.AgregarDetalleReserva
-           /* foreach(Instrumento x in clbInstrumentos.CheckedItems)
+            foreach(Instrumento x in clbInstrumentos.CheckedItems)
             {
                 objReservaInstruemento.AgregarReservaInstrumento(objReserva.id_reserva, x.id_instrumento);
             }
@@ -109,10 +98,7 @@ namespace CapaPresentacion
             objdetalle.id2_reserva = objReserva.id_reserva;
             objdetalle.nombre_cliente = objCliente.cli_nombre;
             objdetalle.nom_sala = cboxSala.Text;
-            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);*/
-
-
-
+            objDataDetalleReserva.AgregarDetalleReserva(objdetalle);
         }
 
     }
